@@ -1,0 +1,14 @@
+label,support
+000 - Normal,40
+272 - Protocol Manipulation,5
+242 - Code Injection,7
+88 - OS Command Injection,7
+126 - Path Traversal,5
+66 - SQL Injection,5
+16 - Dictionary-based Password Attack,5
+310 - Scanning for Vulnerable Software,5
+153 - Input Data Manipulation,5
+274 - HTTP Verb Tampering,5
+194 - Fake the Source of Data,5
+34 - HTTP Response Splitting,8
+33 - HTTP Request Smuggling,5

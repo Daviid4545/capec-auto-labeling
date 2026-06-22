@@ -1,0 +1,17 @@
+RESUMEN MATRICES INTER-ETIQUETA CAPEC/NORMAL
+======================================================================
+
+Definicion: M[i,j] cuenta instancias donde la etiqueta real i esta activa y la etiqueta predicha j esta activa.
+Normalizacion: M_norm[i,j] = M[i,j] / soporte_real_i.
+Interpretacion: la diagonal normalizada equivale al recall por etiqueta; las celdas fuera de diagonal indican co-predicciones o confusiones.
+
+--- Tecnicas generadas ---
+  - rules: Reglas | scope=eval_set | n=8006 | fuente=rules_labeling_srbh2020/predictions_rules.csv
+  - embeddings: Embeddings | scope=eval_set | n=8006 | fuente=embeddings_labeling_srbh2020/predictions_embeddings.csv
+  - weak_supervision: Supervisión débil | scope=eval_set | n=8006 | fuente=weak_supervision_srbh2020/predictions_weak_supervision.csv
+  - llm_zero_shot: LLM zero-shot | scope=llm_eval_subset_srbh2020 | n=100 | fuente=llm_labeling_srbh2020/predictions_llm_zero_shot.csv
+  - llm_few_shot: LLM few-shot | scope=llm_eval_subset_srbh2020 | n=100 | fuente=llm_labeling_srbh2020/predictions_llm_few_shot.csv
+  - hitl_budget_100: HITL 100 | scope=eval_set | n=8006 | fuente=human_in_the_loop_srbh2020/budget_100/predictions_human_in_the_loop.csv
+
+--- Nota metodologica ---
+Las matrices LLM se calculan sobre llm_eval_subset_srbh2020, mientras que reglas, embeddings, supervision debil y HITL 100 se calculan sobre eval_set. Por tanto, deben interpretarse como analisis cualitativo complementario y no como ranking principal de tecnicas.

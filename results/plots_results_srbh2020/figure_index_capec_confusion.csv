@@ -1,0 +1,8 @@
+figure_id,filename,title,description,source
+fig_10_rules,fig_10_capec_confusion_rules.png,Matriz inter-etiqueta Reglas,Matriz normalizada por soporte real para Reglas (eval_set).,rules_labeling_srbh2020/predictions_rules.csv
+fig_10_embeddings,fig_10_capec_confusion_embeddings.png,Matriz inter-etiqueta Embeddings,Matriz normalizada por soporte real para Embeddings (eval_set).,embeddings_labeling_srbh2020/predictions_embeddings.csv
+fig_10_weak_supervision,fig_10_capec_confusion_weak_supervision.png,Matriz inter-etiqueta Supervisión débil,Matriz normalizada por soporte real para Supervisión débil (eval_set).,weak_supervision_srbh2020/predictions_weak_supervision.csv
+fig_10_llm_zero_shot,fig_10_capec_confusion_llm_zero_shot.png,Matriz inter-etiqueta LLM zero-shot,Matriz normalizada por soporte real para LLM zero-shot (llm_eval_subset_srbh2020).,llm_labeling_srbh2020/predictions_llm_zero_shot.csv
+fig_10_llm_few_shot,fig_10_capec_confusion_llm_few_shot.png,Matriz inter-etiqueta LLM few-shot,Matriz normalizada por soporte real para LLM few-shot (llm_eval_subset_srbh2020).,llm_labeling_srbh2020/predictions_llm_few_shot.csv
+fig_10_hitl_budget_100,fig_10_capec_confusion_hitl_budget_100.png,Matriz inter-etiqueta HITL 100,Matriz normalizada por soporte real para HITL 100 (eval_set).,human_in_the_loop_srbh2020/budget_100/predictions_human_in_the_loop.csv
+fig_10_grid,fig_10_grid_capec_confusion.png,Resumen de matrices inter-etiqueta,Grid comparativo de matrices normalizadas por soporte real.,predicciones de tecnicas

@@ -1,0 +1,14 @@
+,000 - Normal,272 - Protocol Manipulation,242 - Code Injection,88 - OS Command Injection,126 - Path Traversal,66 - SQL Injection,16 - Dictionary-based Password Attack,310 - Scanning for Vulnerable Software,153 - Input Data Manipulation,274 - HTTP Verb Tampering,194 - Fake the Source of Data,34 - HTTP Response Splitting,33 - HTTP Request Smuggling
+000 - Normal,4016,69,47,63,39,11,21,46,0,34,128,153,1
+272 - Protocol Manipulation,57,0,0,1,1,2,1,2,0,2,3,12,0
+242 - Code Injection,57,7,10,21,4,0,4,1,0,1,32,0,2
+88 - OS Command Injection,43,0,2,0,7,1,7,0,0,3,0,2,1
+126 - Path Traversal,124,2,1,5,9,0,7,18,0,16,2,1,0
+66 - SQL Injection,889,9,86,50,146,881,14,25,0,32,36,35,3
+16 - Dictionary-based Password Attack,3,0,0,0,0,0,13,0,0,0,0,0,0
+310 - Scanning for Vulnerable Software,12,0,4,1,0,0,0,7,0,0,0,0,0
+153 - Input Data Manipulation,14,0,0,0,0,0,1,0,0,1,1,1,2
+274 - HTTP Verb Tampering,20,0,0,0,0,0,0,0,0,13,2,13,0
+194 - Fake the Source of Data,305,4,2,0,7,0,3,10,1,70,62,31,0
+34 - HTTP Response Splitting,105,0,3,2,8,0,0,1,0,1,1,53,0
+33 - HTTP Request Smuggling,3,0,2,0,0,0,0,0,0,0,0,3,1

@@ -1,0 +1,12 @@
+figure_id,filename,title,description,source_csv
+fig_01,fig_01_main_results_pr_f1.png,Resultados principales (P/R/F1 micro y macro),"Precision, Recall y F1 (micro y macro) para la variante principal de cada familia; LLM se evalua sobre llm_eval_subset_srbh2020.",overall_metrics.csv
+fig_02a,fig_02a_eval_set_precision_recall_f1.png,P/R/F1 sobre eval_set,"Precision, Recall y F1 (micro y macro) de todas las técnicas evaluadas sobre eval_set.",overall_metrics.csv
+fig_02b,fig_02b_eval_set_other_metrics.png,Métricas complementarias sobre eval_set,"Jaccard, subset accuracy, Cohen kappa (flat y medio por etiqueta).",overall_metrics.csv
+fig_03,fig_03_llm_zero_vs_few.png,LLM zero-shot vs few-shot,"Compara P, R y F1 (micro y macro) entre zero-shot y few-shot sobre llm_eval_subset_srbh2020.",overall_metrics.csv
+fig_04,fig_04_hitl_budget_curve.png,Impacto del presupuesto HITL,"Evolución de métricas al revisar 50, 100 y 200 casos.",hitl_budget_comparison_table.csv
+fig_05a,fig_05a_per_label_f1_eval_set.png,F1 por etiqueta CAPEC en eval_set,"F1 por etiqueta para reglas, embeddings, supervisión débil y HITL-100 con soporte de cada clase.",per_label_metrics.csv
+fig_05b,fig_05b_per_label_f1_llm_eval_subset_srbh2020.png,F1 por etiqueta CAPEC en llm_eval_subset_srbh2020,Compara F1 por etiqueta entre LLM zero-shot y few-shot sobre llm_eval_subset_srbh2020.,per_label_metrics.csv
+fig_06,fig_06_agreement_between_methods.png,Acuerdo entre técnicas,Jaccard medio entre pares de técnicas (barra azul) y Cohen's kappa flat (barra roja fina centrada).,agreement_between_methods_eval_set.csv
+fig_07,fig_07_hamming_loss_eval_set.png,Hamming loss sobre eval_set,Proporción de etiquetas mal asignadas en eval_set.,overall_metrics.csv
+fig_08,fig_08_main_metrics_matrix.png,Matriz de métricas principales,Heatmap con 11 métricas para técnicas principales. Hamming se muestra como 1-Hamming; LLM se evalua sobre llm_eval_subset_srbh2020.,overall_metrics.csv
+fig_09,fig_09_fpr_fnr_eval_set.png,FPR y FNR por técnica,Tasa de falsos positivos (FPR) y falsos negativos (FNR) agregadas por técnica sobre eval_set.,confusion_matrices_per_label.csv

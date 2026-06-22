@@ -1,0 +1,64 @@
+RESUMEN DE GRAFICAS GENERADAS - SR-BH 2020 (v2)
+============================================================
+
+Carpeta de entrada: evaluation_srbh2020
+Carpeta de salida: plots_results_srbh2020
+Figuras generadas: 11
+
+fig_01 - Resultados principales (P/R/F1 micro y macro)
+  Archivo: fig_01_main_results_pr_f1.png
+  Fuente: overall_metrics.csv
+  Descripcion: Precision, Recall y F1 (micro y macro) para la variante principal de cada familia; LLM se evalua sobre llm_eval_subset_srbh2020.
+
+fig_02a - P/R/F1 sobre eval_set
+  Archivo: fig_02a_eval_set_precision_recall_f1.png
+  Fuente: overall_metrics.csv
+  Descripcion: Precision, Recall y F1 (micro y macro) de todas las técnicas evaluadas sobre eval_set.
+
+fig_02b - Métricas complementarias sobre eval_set
+  Archivo: fig_02b_eval_set_other_metrics.png
+  Fuente: overall_metrics.csv
+  Descripcion: Jaccard, subset accuracy, Cohen kappa (flat y medio por etiqueta).
+
+fig_03 - LLM zero-shot vs few-shot
+  Archivo: fig_03_llm_zero_vs_few.png
+  Fuente: overall_metrics.csv
+  Descripcion: Compara P, R y F1 (micro y macro) entre zero-shot y few-shot sobre llm_eval_subset_srbh2020.
+
+fig_04 - Impacto del presupuesto HITL
+  Archivo: fig_04_hitl_budget_curve.png
+  Fuente: hitl_budget_comparison_table.csv
+  Descripcion: Evolución de métricas al revisar 50, 100 y 200 casos.
+
+fig_05a - F1 por etiqueta CAPEC en eval_set
+  Archivo: fig_05a_per_label_f1_eval_set.png
+  Fuente: per_label_metrics.csv
+  Descripcion: F1 por etiqueta para reglas, embeddings, supervisión débil y HITL-100 con soporte de cada clase.
+
+fig_05b - F1 por etiqueta CAPEC en llm_eval_subset_srbh2020
+  Archivo: fig_05b_per_label_f1_llm_eval_subset_srbh2020.png
+  Fuente: per_label_metrics.csv
+  Descripcion: Compara F1 por etiqueta entre LLM zero-shot y few-shot sobre llm_eval_subset_srbh2020.
+
+fig_06 - Acuerdo entre técnicas
+  Archivo: fig_06_agreement_between_methods.png
+  Fuente: agreement_between_methods_eval_set.csv
+  Descripcion: Jaccard medio entre pares de técnicas (barra azul) y Cohen's kappa flat (barra roja fina centrada).
+
+fig_07 - Hamming loss sobre eval_set
+  Archivo: fig_07_hamming_loss_eval_set.png
+  Fuente: overall_metrics.csv
+  Descripcion: Proporción de etiquetas mal asignadas en eval_set.
+
+fig_08 - Matriz de métricas principales
+  Archivo: fig_08_main_metrics_matrix.png
+  Fuente: overall_metrics.csv
+  Descripcion: Heatmap con 11 métricas para técnicas principales. Hamming se muestra como 1-Hamming; LLM se evalua sobre llm_eval_subset_srbh2020.
+
+fig_09 - FPR y FNR por técnica
+  Archivo: fig_09_fpr_fnr_eval_set.png
+  Fuente: confusion_matrices_per_label.csv
+  Descripcion: Tasa de falsos positivos (FPR) y falsos negativos (FNR) agregadas por técnica sobre eval_set.
+
+--- Notas metodologicas ---
+Las graficas separan comparaciones por scope: eval_set para tecnicas comparables (reglas, embeddings, supervision debil, HITL), y llm_eval_subset_srbh2020 para zero-shot vs few-shot. Las figuras resumen que incluyen LLM deben interpretarse con esta diferencia de scope. En el heatmap de metricas, Hamming loss se muestra como 1-Hamming para que valores mayores indiquen mejor rendimiento.
