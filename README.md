@@ -313,9 +313,3 @@ The original SR-BH 2020 dataset is distributed through Harvard Dataverse and mus
 https://doi.org/10.7910/DVN/OGOIXX
 
 Users should review the dataset licence and citation requirements before reusing it.
-
-## Author
-
-David Fernández Zaragoza
-Master’s Thesis – Master’s Degree in Cybersecurity
-Universidad Internacional de La Rioja (UNIR)
