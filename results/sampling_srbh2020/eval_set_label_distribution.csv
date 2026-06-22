@@ -1,0 +1,14 @@
+label,count,percentage_sample
+000 - Normal,4628,57.8066
+66 - SQL Injection,2206,27.5543
+194 - Fake the Source of Data,495,6.1829
+126 - Path Traversal,185,2.3108
+34 - HTTP Response Splitting,174,2.1734
+242 - Code Injection,139,1.7362
+272 - Protocol Manipulation,81,1.0117
+88 - OS Command Injection,66,0.8244
+274 - HTTP Verb Tampering,48,0.5996
+310 - Scanning for Vulnerable Software,24,0.2998
+153 - Input Data Manipulation,20,0.2498
+16 - Dictionary-based Password Attack,16,0.1999
+33 - HTTP Request Smuggling,9,0.1124

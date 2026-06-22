@@ -1,0 +1,95 @@
+MUESTREO ESTRATIFICADO MULTIETIQUETA - SR-BH 2020
+=======================================================
+
+Archivo de entrada: data_capec_multilabel.csv
+Semilla aleatoria: 42
+
+--- Limpieza inicial ---
+Filas iniciales: 907815
+Filas con todas las features HTTP vacias detectadas: 2
+Accion sobre esas filas: conservadas, no eliminadas
+Filas usadas para el muestreo: 907815
+Columnas iniciales: 38
+Etiquetas excluidas por insuficiencia muestral: ['248 - Command Injection']
+Etiquetas operativas: 13 -> ['000 - Normal', '272 - Protocol Manipulation', '242 - Code Injection', '88 - OS Command Injection', '126 - Path Traversal', '66 - SQL Injection', '16 - Dictionary-based Password Attack', '310 - Scanning for Vulnerable Software', '153 - Input Data Manipulation', '274 - HTTP Verb Tampering', '194 - Fake the Source of Data', '34 - HTTP Response Splitting', '33 - HTTP Request Smuggling']
+
+--- Construccion de text_input ---
+Campos concatenados, solo request y no response:
+  - request_http_method
+  - request_http_request
+  - request_user_agent
+  - request_referer
+  - request_host
+  - request_origin
+  - request_cookie
+  - request_content_type
+  - request_body
+
+--- Tamanos de subsets ---
+eval_set:                    8006 filas (objetivo 8000)
+train_set:                  11995 filas (objetivo 12000)
+llm_eval_subset_srbh2020:     100 filas (objetivo 100)
+
+--- Verificaciones ---
+|eval_set ∩ train_set| = 0 (debe ser 0)
+llm_eval_subset_srbh2020 ⊆ eval_set: True (debe ser True)
+
+--- Distribucion de etiquetas: dataset operativo ---
+  000 - Normal: 525195
+  66 - SQL Injection: 250311
+  194 - Fake the Source of Data: 56145
+  126 - Path Traversal: 20992
+  34 - HTTP Response Splitting: 19738
+  242 - Code Injection: 15827
+  272 - Protocol Manipulation: 9153
+  88 - OS Command Injection: 7482
+  274 - HTTP Verb Tampering: 5437
+  310 - Scanning for Vulnerable Software: 2718
+  153 - Input Data Manipulation: 2272
+  16 - Dictionary-based Password Attack: 1847
+  33 - HTTP Request Smuggling: 1059
+
+--- Distribucion de etiquetas: eval_set ---
+  000 - Normal: 4628
+  66 - SQL Injection: 2206
+  194 - Fake the Source of Data: 495
+  126 - Path Traversal: 185
+  34 - HTTP Response Splitting: 174
+  242 - Code Injection: 139
+  272 - Protocol Manipulation: 81
+  88 - OS Command Injection: 66
+  274 - HTTP Verb Tampering: 48
+  310 - Scanning for Vulnerable Software: 24
+  153 - Input Data Manipulation: 20
+  16 - Dictionary-based Password Attack: 16
+  33 - HTTP Request Smuggling: 9
+
+--- Distribucion de etiquetas: train_set ---
+  000 - Normal: 6942
+  66 - SQL Injection: 3309
+  194 - Fake the Source of Data: 742
+  126 - Path Traversal: 277
+  34 - HTTP Response Splitting: 261
+  242 - Code Injection: 209
+  272 - Protocol Manipulation: 121
+  88 - OS Command Injection: 99
+  274 - HTTP Verb Tampering: 72
+  310 - Scanning for Vulnerable Software: 36
+  153 - Input Data Manipulation: 30
+  16 - Dictionary-based Password Attack: 24
+  33 - HTTP Request Smuggling: 14
+
+--- Distribucion de etiquetas: llm_eval_subset_srbh2020 ---
+  000 - Normal: 40
+  34 - HTTP Response Splitting: 8
+  242 - Code Injection: 7
+  88 - OS Command Injection: 7
+  272 - Protocol Manipulation: 5
+  126 - Path Traversal: 5
+  66 - SQL Injection: 5
+  16 - Dictionary-based Password Attack: 5
+  310 - Scanning for Vulnerable Software: 5
+  153 - Input Data Manipulation: 5
+  274 - HTTP Verb Tampering: 5
+  194 - Fake the Source of Data: 5
+  33 - HTTP Request Smuggling: 5

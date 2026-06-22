@@ -1,0 +1,14 @@
+label,count,percentage_sample
+000 - Normal,40,40.0
+34 - HTTP Response Splitting,8,8.0
+242 - Code Injection,7,7.0
+88 - OS Command Injection,7,7.0
+272 - Protocol Manipulation,5,5.0
+126 - Path Traversal,5,5.0
+66 - SQL Injection,5,5.0
+16 - Dictionary-based Password Attack,5,5.0
+310 - Scanning for Vulnerable Software,5,5.0
+153 - Input Data Manipulation,5,5.0
+274 - HTTP Verb Tampering,5,5.0
+194 - Fake the Source of Data,5,5.0
+33 - HTTP Request Smuggling,5,5.0
