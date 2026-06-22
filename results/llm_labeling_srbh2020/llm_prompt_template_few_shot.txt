@@ -1,0 +1,137 @@
+Eres un analista de ciberseguridad. Debes etiquetar UNA petición HTTP usando únicamente las etiquetas permitidas.
+
+Etiquetas permitidas:
+- 000 - Normal: petición normal o sin indicios técnicos suficientes de ataque.
+- 272 - Protocol Manipulation: manipulacion del protocolo o uso anomalo de HTTP/metadatos internos: .svn, .git, HTTP raro, backdoor, remote_syslog.
+- 242 - Code Injection: inyeccion de codigo o script: <script>, javascript:, onerror, PHP, php://input, eval, base64_decode.
+- 88 - OS Command Injection: comandos del sistema: ;cat, |wget, curl, chmod, bash, sh, whoami, uname, /bin/sh.
+- 126 - Path Traversal: rutas o ficheros sensibles: ../, ..\\, /etc/passwd, wp-config.php, .git, .svn, WEB-INF.
+- 66 - SQL Injection: payload SQL: UNION SELECT, information_schema, OR 1=1, SELECT FROM, sleep(), benchmark(), waitfor delay.
+- 16 - Dictionary-based Password Attack: login/fuerza bruta/diccionario: wp-login.php, /login, user, username, pwd, password.
+- 310 - Scanning for Vulnerable Software: escaneo/enumeracion de software vulnerable: nmap, nikto, wpscan, cgi-bin, cfide, rutas de plugins o pruebas conocidas.
+- 153 - Input Data Manipulation: manipulacion generica de entrada: null byte, doble encoding, parametros malformados, template injection.
+- 274 - HTTP Verb Tampering: metodos HTTP raros o abusivos: TRACE, TRACK, DEBUG, PROPFIND, CONNECT, PATCH, etc.
+- 194 - Fake the Source of Data: origen falsificado o sospechoso: URL externa incrustada, referer/origin raro, localhost, file://, google externo.
+- 34 - HTTP Response Splitting: CRLF/header injection: %0d%0a, %0a, set-cookie, location, content-length inyectado.
+- 33 - HTTP Request Smuggling: smuggling/desincronizacion: CRLF en body POST, Transfer-Encoding chunked, Content-Length conflictivo.
+
+Criterios obligatorios:
+1. Devuelve SOLO JSON válido, sin Markdown y sin texto adicional.
+2. Usa máximo 2 etiquetas de ataque.
+3. Si no hay una señal técnica clara, usa solo "000 - Normal".
+4. No inventes etiquetas fuera de la lista.
+5. Basa la decisión en la petición HTTP, no en suposiciones externas.
+6. No clasifiques como ataque por una palabra aislada si no hay patrón técnico.
+7. Si hay varias señales claras, puedes devolver dos etiquetas como máximo.
+8. Si devuelves una etiqueta de ataque, no incluyas "000 - Normal".
+
+
+Ejemplos etiquetados de referencia. Úsalos solo como guía de formato y criterio, no como lista cerrada de casos:
+Ejemplo:
+Petición HTTP:
+"""request_http_method: GET | request_http_request: / | request_user_agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; MALNJS; rv:11.0) like Gecko | request_host: test-site.com"""
+
+Salida correcta:
+{"labels": ["000 - Normal"], "reason": "señal técnica compatible con la etiqueta indicada"}
+
+Ejemplo:
+Petición HTTP:
+"""request_http_method: GET | request_http_request: / | request_user_agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; MAARJS; rv:11.0) like Gecko | request_host: test-site.com"""
+
+Salida correcta:
+{"labels": ["000 - Normal"], "reason": "señal técnica compatible con la etiqueta indicada"}
+
+Ejemplo:
+Petición HTTP:
+"""request_http_method: POST | request_http_request: /blog/wp-login.php?action=register | request_user_agent: Mozilla/5.0 (X11; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0 | request_referer: http://test-site.com/blog/wp-login.php?action=register | request_host: test-site.com..."""
+
+Salida correcta:
+{"labels": ["272 - Protocol Manipulation"], "reason": "señal técnica compatible con la etiqueta indicada"}
+
+Ejemplo:
+Petición HTTP:
+"""request_http_method: POST | request_http_request: /%24%7B%40print%28chr%28122%29.chr%2897%29.chr%28112%29.chr%2895%29.chr%28116%29.chr%28111%29.chr%28107%29.chr%28101%29.chr%28110%29%29%7D%5C/wp-login.php?action=lostpassword | request_user_agent: Mozilla/5.0 (X11; Linux x86_64; r..."""
+
+Salida correcta:
+{"labels": ["242 - Code Injection"], "reason": "señal técnica compatible con la etiqueta indicada"}
+
+Ejemplo:
+Petición HTTP:
+"""request_http_method: POST | request_http_request: /blog/index.php/my-account/edit-profile/?mode=grid | request_user_agent: Mozilla/5.0 (X11; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0 | request_referer: http://test-site.com/blog/index.php/my-account/edit-profile/?mode=gri..."""
+
+Salida correcta:
+{"labels": ["88 - OS Command Injection"], "reason": "señal técnica compatible con la etiqueta indicada"}
+
+Ejemplo:
+Petición HTTP:
+"""request_http_method: GET | request_http_request: /blog/wp-login.php?reauth=1&redirect_to=http%3A%2F%2Ftest-site.com%2Fblog%2Fwp-admin%2Fprofile.php | request_user_agent: ../../../../../../../../../../../../../../../../etc/passwd | request_referer: http://test-site.com/blog/wp-adm..."""
+
+Salida correcta:
+{"labels": ["126 - Path Traversal"], "reason": "señal técnica compatible con la etiqueta indicada"}
+
+Ejemplo:
+Petición HTTP:
+"""request_http_method: POST | request_http_request: /blog/wp-login.php?action=lostpassword | request_user_agent: Mozilla/5.0 (X11; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0' UNION ALL select NULL -- | request_referer: http://test-site.com/blog/wp-login.php?action=lostpassw..."""
+
+Salida correcta:
+{"labels": ["66 - SQL Injection"], "reason": "señal técnica compatible con la etiqueta indicada"}
+
+Ejemplo:
+Petición HTTP:
+"""request_http_method: POST | request_http_request: /wp-login.php | request_user_agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0 | request_host: test-site.com | request_content_type: application/x-www-form-urlencoded | request_body: log=tomas&pwd..."""
+
+Salida correcta:
+{"labels": ["16 - Dictionary-based Password Attack"], "reason": "señal técnica compatible con la etiqueta indicada"}
+
+Ejemplo:
+Petición HTTP:
+"""request_http_method: GET | request_http_request: /7/ | request_user_agent: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html) | request_host: 249.network5-175-62-15.static.network5.net"""
+
+Salida correcta:
+{"labels": ["310 - Scanning for Vulnerable Software"], "reason": "señal técnica compatible con la etiqueta indicada"}
+
+Ejemplo:
+Petición HTTP:
+"""request_http_method: POST | request_http_request: /blog/index.php/my-account/lost-password/ | request_user_agent: Mozilla/5.0 (X11; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0 | request_referer: http://test-site.com/blog/index.php/my-account/lost-password/ | request_host:..."""
+
+Salida correcta:
+{"labels": ["153 - Input Data Manipulation"], "reason": "señal técnica compatible con la etiqueta indicada"}
+
+Ejemplo:
+Petición HTTP:
+"""request_http_method: PATCH | request_http_request: /blog/wp-login.php?action=lostpassword/9rndaiv8u7 | request_user_agent: Mozilla/5.0 (X11; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0 | request_referer: http://test-site.com/blog/wp-login.php?action=lostpassword | request_..."""
+
+Salida correcta:
+{"labels": ["274 - HTTP Verb Tampering"], "reason": "señal técnica compatible con la etiqueta indicada"}
+
+Ejemplo:
+Petición HTTP:
+"""request_http_method: POST | request_http_request: /blog/www.google.com%2Fsearch%3Fq%3DOWASP%2520priority?action=lostpassword | request_user_agent: Mozilla/5.0 (X11; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0 | request_referer: http://test-site.com/blog/wp-login.php?action..."""
+
+Salida correcta:
+{"labels": ["194 - Fake the Source of Data"], "reason": "señal técnica compatible con la etiqueta indicada"}
+
+Ejemplo:
+Petición HTTP:
+"""request_http_method: POST | request_http_request: /any%3F%0D%0ASet-cookie%3A+Tamper%3D8b5046c4-4449-4d0a-a8c2-48a9a33cc97b%0D%0A/index.php/my-account | request_user_agent: Mozilla/5.0 (X11; Linux x86_64; rv:73.0) Gecko/20100101 Firefox/73.0 | request_referer: https://test-site.co..."""
+
+Salida correcta:
+{"labels": ["34 - HTTP Response Splitting"], "reason": "señal técnica compatible con la etiqueta indicada"}
+
+Ejemplo:
+Petición HTTP:
+"""request_http_method: GET | request_http_request: /blog/wp-login.php?reauth=any%3F%0D%0ASet-cookie%3A+Tamper%3D179ed63d-70a3-4613-af1a-b3edf19211c2&redirect_to=http%3A%2F%2Ftest-site.com%2Fblog%2Fwp-admin%2Fprofile.php | request_user_agent: Mozilla/5.0 (X11; Linux x86_64; rv:70.0)..."""
+
+Salida correcta:
+{"labels": ["34 - HTTP Response Splitting", "33 - HTTP Request Smuggling"], "reason": "señal técnica compatible con la etiqueta indicada"}
+
+Ahora etiqueta la nueva petición.
+
+Petición HTTP a etiquetar:
+"""{text_input}"""
+
+Devuelve exactamente este esquema JSON:
+{
+  "labels": ["000 - Normal"],
+  "reason": "motivo breve basado en la señal técnica observada"
+}

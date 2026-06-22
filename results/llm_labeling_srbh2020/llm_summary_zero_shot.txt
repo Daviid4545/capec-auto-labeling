@@ -1,0 +1,67 @@
+RESUMEN DE ETIQUETADO ZERO-SHOT / FEW-SHOT CON LLM LOCAL
+======================================================================
+
+Archivo de entrada: sampling_srbh2020\llm_eval_subset_srbh2020.csv
+Filas procesadas: 100
+Modo de prompt: zero_shot
+Archivo de ejemplos few-shot: no usado
+Numero de ejemplos few-shot: 0
+Modelo Ollama: qwen2.5:7b-instruct
+URL Ollama: http://localhost:11434/api/generate
+Formato JSON Ollama: True
+Temperatura: 0.0
+Top-p: 0.9
+Seed: 42
+MAX_ATTACK_LABELS: 2
+Prompt signature: 43f4b15726540eccb24bc9b1bdfe117501798a9e4aed06e0d57a473ccc09fbdd
+
+--- Estado de respuestas ---
+  - from_cache: 0
+  - ok: 100
+  - fallback_normal: 0
+  - error: 0
+
+--- Etiquetas evaluadas ---
+  - 000 - Normal
+  - 272 - Protocol Manipulation
+  - 242 - Code Injection
+  - 88 - OS Command Injection
+  - 126 - Path Traversal
+  - 66 - SQL Injection
+  - 16 - Dictionary-based Password Attack
+  - 310 - Scanning for Vulnerable Software
+  - 153 - Input Data Manipulation
+  - 274 - HTTP Verb Tampering
+  - 194 - Fake the Source of Data
+  - 34 - HTTP Response Splitting
+  - 33 - HTTP Request Smuggling
+
+--- Distribucion de etiquetas predichas ---
+  - 000 - Normal: 34
+  - 272 - Protocol Manipulation: 0
+  - 242 - Code Injection: 4
+  - 88 - OS Command Injection: 0
+  - 126 - Path Traversal: 23
+  - 66 - SQL Injection: 7
+  - 16 - Dictionary-based Password Attack: 11
+  - 310 - Scanning for Vulnerable Software: 13
+  - 153 - Input Data Manipulation: 13
+  - 274 - HTTP Verb Tampering: 6
+  - 194 - Fake the Source of Data: 1
+  - 34 - HTTP Response Splitting: 15
+  - 33 - HTTP Request Smuggling: 2
+
+--- Metricas rapidas sobre subconjunto LLM ---
+  - rows: 100
+  - micro_f1: 0.525424
+  - macro_f1: 0.393400
+  - micro_precision: 0.480620
+  - micro_recall: 0.579439
+  - macro_precision: 0.415008
+  - macro_recall: 0.521978
+  - hamming_loss: 0.086154
+  - jaccard_samples: 0.528333
+  - subset_accuracy: 0.460000
+
+--- Nota metodologica ---
+Esta tecnica usa un modelo de lenguaje local mediante Ollama, sin API externa de pago. El modelo no se ajusta ni se entrena; se utiliza mediante prompting zero-shot o few-shot con una lista cerrada de etiquetas CAPEC. En few-shot, los ejemplos proceden exclusivamente de train_set.csv, no de llm_subset.csv, para evitar contaminacion de la evaluacion. Se usa temperatura 0 y formato JSON cuando Ollama lo permite, y se guardan las respuestas crudas para trazabilidad. La evaluacion se realiza sobre un subconjunto LLM extraido de eval_set.

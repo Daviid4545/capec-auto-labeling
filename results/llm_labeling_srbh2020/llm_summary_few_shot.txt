@@ -1,0 +1,83 @@
+RESUMEN DE ETIQUETADO ZERO-SHOT / FEW-SHOT CON LLM LOCAL
+======================================================================
+
+Archivo de entrada: sampling_srbh2020\llm_eval_subset_srbh2020.csv
+Filas procesadas: 100
+Modo de prompt: few_shot
+Archivo de ejemplos few-shot: sampling_srbh2020/train_set.csv
+Numero de ejemplos few-shot: 14
+Modelo Ollama: qwen2.5:7b-instruct
+URL Ollama: http://localhost:11434/api/generate
+Formato JSON Ollama: True
+Temperatura: 0.0
+Top-p: 0.9
+Seed: 42
+MAX_ATTACK_LABELS: 2
+Prompt signature: e55dd92dc3e560080d3122d3a66245934d4273923abf7b37afde59206e5146b6
+
+--- Estado de respuestas ---
+  - from_cache: 0
+  - ok: 100
+  - fallback_normal: 0
+  - error: 0
+
+--- Ejemplos few-shot usados ---
+  - 000 - Normal -> ['000 - Normal'] (source_index=10453)
+  - 000 - Normal -> ['000 - Normal'] (source_index=7238)
+  - 272 - Protocol Manipulation -> ['272 - Protocol Manipulation'] (source_index=4744)
+  - 242 - Code Injection -> ['242 - Code Injection'] (source_index=3175)
+  - 88 - OS Command Injection -> ['88 - OS Command Injection'] (source_index=3398)
+  - 126 - Path Traversal -> ['126 - Path Traversal'] (source_index=565)
+  - 66 - SQL Injection -> ['66 - SQL Injection'] (source_index=2958)
+  - 16 - Dictionary-based Password Attack -> ['16 - Dictionary-based Password Attack'] (source_index=7191)
+  - 310 - Scanning for Vulnerable Software -> ['310 - Scanning for Vulnerable Software'] (source_index=87)
+  - 153 - Input Data Manipulation -> ['153 - Input Data Manipulation'] (source_index=874)
+  - 274 - HTTP Verb Tampering -> ['274 - HTTP Verb Tampering'] (source_index=7171)
+  - 194 - Fake the Source of Data -> ['194 - Fake the Source of Data'] (source_index=1317)
+  - 34 - HTTP Response Splitting -> ['34 - HTTP Response Splitting'] (source_index=4427)
+  - 33 - HTTP Request Smuggling -> ['34 - HTTP Response Splitting', '33 - HTTP Request Smuggling'] (source_index=4561)
+
+--- Etiquetas evaluadas ---
+  - 000 - Normal
+  - 272 - Protocol Manipulation
+  - 242 - Code Injection
+  - 88 - OS Command Injection
+  - 126 - Path Traversal
+  - 66 - SQL Injection
+  - 16 - Dictionary-based Password Attack
+  - 310 - Scanning for Vulnerable Software
+  - 153 - Input Data Manipulation
+  - 274 - HTTP Verb Tampering
+  - 194 - Fake the Source of Data
+  - 34 - HTTP Response Splitting
+  - 33 - HTTP Request Smuggling
+
+--- Distribucion de etiquetas predichas ---
+  - 000 - Normal: 59
+  - 272 - Protocol Manipulation: 4
+  - 242 - Code Injection: 10
+  - 88 - OS Command Injection: 1
+  - 126 - Path Traversal: 11
+  - 66 - SQL Injection: 6
+  - 16 - Dictionary-based Password Attack: 0
+  - 310 - Scanning for Vulnerable Software: 6
+  - 153 - Input Data Manipulation: 2
+  - 274 - HTTP Verb Tampering: 2
+  - 194 - Fake the Source of Data: 0
+  - 34 - HTTP Response Splitting: 8
+  - 33 - HTTP Request Smuggling: 5
+
+--- Metricas rapidas sobre subconjunto LLM ---
+  - rows: 100
+  - micro_f1: 0.615385
+  - macro_f1: 0.460743
+  - micro_precision: 0.596491
+  - micro_recall: 0.635514
+  - macro_precision: 0.512649
+  - macro_recall: 0.505220
+  - hamming_loss: 0.065385
+  - jaccard_samples: 0.619167
+  - subset_accuracy: 0.570000
+
+--- Nota metodologica ---
+Esta tecnica usa un modelo de lenguaje local mediante Ollama, sin API externa de pago. El modelo no se ajusta ni se entrena; se utiliza mediante prompting zero-shot o few-shot con una lista cerrada de etiquetas CAPEC. En few-shot, los ejemplos proceden exclusivamente de train_set.csv, no de llm_subset.csv, para evitar contaminacion de la evaluacion. Se usa temperatura 0 y formato JSON cuando Ollama lo permite, y se guardan las respuestas crudas para trazabilidad. La evaluacion se realiza sobre un subconjunto LLM extraido de eval_set.
