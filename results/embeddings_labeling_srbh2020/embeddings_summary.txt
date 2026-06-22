@@ -1,0 +1,153 @@
+RESUMEN DE ETIQUETADO MEDIANTE EMBEDDINGS Y SIMILITUD COSENO
+======================================================================
+
+Archivo de evaluacion: sampling_srbh2020\eval_set.csv
+Archivo de calibracion: sampling_srbh2020\train_set.csv
+Fuente de umbrales: train_set
+Filas evaluadas: 8006
+Modelo utilizado: sentence-transformers/all-MiniLM-L6-v2
+TOP_K: 1
+
+--- Campos usados para semantic_input ---
+  - request_http_method
+  - request_http_request
+  - request_http_protocol
+  - request_user_agent
+  - request_referer
+  - request_origin
+  - request_cookie
+  - request_content_type
+  - request_body
+
+--- Etiquetas evaluadas ---
+  - 000 - Normal
+  - 272 - Protocol Manipulation
+  - 242 - Code Injection
+  - 88 - OS Command Injection
+  - 126 - Path Traversal
+  - 66 - SQL Injection
+  - 16 - Dictionary-based Password Attack
+  - 310 - Scanning for Vulnerable Software
+  - 153 - Input Data Manipulation
+  - 274 - HTTP Verb Tampering
+  - 194 - Fake the Source of Data
+  - 34 - HTTP Response Splitting
+  - 33 - HTTP Request Smuggling
+
+--- Umbrales por etiqueta ---
+  - 272 - Protocol Manipulation: 0.529333
+  - 242 - Code Injection: 0.286667
+  - 88 - OS Command Injection: 0.310000
+  - 126 - Path Traversal: 0.184000
+  - 66 - SQL Injection: 0.100000
+  - 16 - Dictionary-based Password Attack: 0.398667
+  - 310 - Scanning for Vulnerable Software: 0.291333
+  - 153 - Input Data Manipulation: 0.422000
+  - 274 - HTTP Verb Tampering: 0.473333
+  - 194 - Fake the Source of Data: 0.398667
+  - 34 - HTTP Response Splitting: 0.436000
+  - 33 - HTTP Request Smuggling: 0.440667
+
+--- Prototipos por etiqueta ---
+
+[272 - Protocol Manipulation]
+  - protocol manipulation malformed http protocol request
+  - svn wc db git head protocol abuse internal metadata
+  - backdoor localhost remote syslog protocol manipulation
+  - unexpected http protocol version protocol abuse
+
+[242 - Code Injection]
+  - php input auto prepend file php wrapper allow url include
+  - script alert javascript onerror onload xss tag
+  - eval assert base64 decode create function php code
+  - php payload executable code inside parameter or body
+
+[88 - OS Command Injection]
+  - operating system command injection shell command execution
+  - semicolon pipe command wget curl chmod cat bash sh
+  - cat etc passwd wget malware chmod command payload
+  - whoami id uname shell command injection
+
+[126 - Path Traversal]
+  - path traversal dot dot slash parent directory
+  - directory traversal etc passwd sensitive file access
+  - svn entries wc db git config web inf password properties
+  - encoded traversal percent two e percent two e slash
+
+[66 - SQL Injection]
+  - sql injection union select information schema database table
+  - or one equals one sql boolean condition select from where
+  - sql payload union all select table name database extraction
+  - waitfor delay sleep benchmark extractvalue updatexml sql injection
+
+[16 - Dictionary-based Password Attack]
+  - dictionary password attack login username password
+  - wordpress wp login repeated credentials pwd parameter
+  - brute force login admin root test password attempt
+  - authentication form user password credential guessing
+
+[310 - Scanning for Vulnerable Software]
+  - scanner nmap nikto wpscan vulnerable software detection
+  - probe wordpress plugin theme cgi bin vulnerable path
+  - security scan known vulnerable endpoint enumeration
+  - cfide administrator nmap lower check vulnerability scan
+
+[153 - Input Data Manipulation]
+  - input data manipulation malformed parameter value
+  - tampered content type unexpected value request field
+  - double encoding null byte manipulated input
+  - template injection malformed input data parameter
+
+[274 - HTTP Verb Tampering]
+  - http verb tampering unusual method trace track debug
+  - unexpected http method not implemented method tampering
+  - propfind mkcol lock unlock copy move method abuse
+  - invalid http verb used to bypass access control
+
+[194 - Fake the Source of Data]
+  - external url encoded inside request path
+  - spoofed origin referer source header
+  - google url embedded in local request path
+  - fake referer origin source manipulation
+
+[34 - HTTP Response Splitting]
+  - http response splitting crlf injection response header
+  - carriage return line feed encoded newline header injection
+  - percent zero d percent zero a response splitting
+  - injected header set cookie location content length
+
+[33 - HTTP Request Smuggling]
+  - http request smuggling crlf inside post body
+  - smuggled request transfer encoding chunked content length
+  - desynchronization request body encoded newline
+  - post body contains embedded second request line
+
+--- Distribucion de etiquetas predichas ---
+  - 000 - Normal: 5609
+  - 272 - Protocol Manipulation: 91
+  - 242 - Code Injection: 153
+  - 88 - OS Command Injection: 143
+  - 126 - Path Traversal: 212
+  - 66 - SQL Injection: 895
+  - 16 - Dictionary-based Password Attack: 55
+  - 310 - Scanning for Vulnerable Software: 109
+  - 153 - Input Data Manipulation: 1
+  - 274 - HTTP Verb Tampering: 169
+  - 194 - Fake the Source of Data: 264
+  - 34 - HTTP Response Splitting: 297
+  - 33 - HTTP Request Smuggling: 8
+
+--- Metricas rapidas sobre eval_set ---
+  - rows: 8006
+  - micro_f1: 0.629310
+  - macro_f1: 0.197230
+  - micro_precision: 0.632651
+  - micro_recall: 0.626004
+  - macro_precision: 0.209536
+  - macro_recall: 0.254129
+  - hamming_loss: 0.057332
+  - jaccard_samples: 0.631048
+  - subset_accuracy: 0.629778
+
+--- Nota metodologica ---
+Esta tecnica compara embeddings de cada peticion HTTP con prototipos textuales asociados a cada categoria CAPEC. El modelo se usa congelado y no se entrena un clasificador final. Si se proporciona train_set, este se usa solo para calibrar umbrales por etiqueta, manteniendo eval_set como conjunto comun de evaluacion para la comparativa. La calibracion incorpora un limite de predicciones por etiqueta para reducir sobreetiquetado en categorias semanticamente amplias.

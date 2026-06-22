@@ -1,0 +1,13 @@
+label,threshold,calibration_source,calibration_precision,calibration_recall,calibration_f1,calibration_support,calibration_predicted,calibration_prevalence,max_pred_rate,selected_pred_rate
+272 - Protocol Manipulation,0.529333,train_set,0.006452,0.008264,0.007246,121,155,0.010088,0.030088,0.012922
+242 - Code Injection,0.286667,train_set,0.070866,0.129187,0.091525,209,381,0.017424,0.04356,0.031763
+88 - OS Command Injection,0.31,train_set,0.019455,0.050505,0.02809,99,257,0.008253,0.028253,0.021426
+126 - Path Traversal,0.184,train_set,0.053659,0.119134,0.073991,277,615,0.023093,0.057732,0.051271
+66 - SQL Injection,0.1,train_set,0.978417,0.4932,0.655817,3309,1668,0.275865,0.35,0.139058
+16 - Dictionary-based Password Attack,0.398667,train_set,0.173077,0.75,0.28125,24,104,0.002001,0.022001,0.00867
+310 - Scanning for Vulnerable Software,0.291333,train_set,0.021459,0.138889,0.037175,36,233,0.003001,0.023001,0.019425
+153 - Input Data Manipulation,0.422,train_set,1.0,0.1,0.181818,30,3,0.002501,0.022501,0.00025
+274 - HTTP Verb Tampering,0.473333,train_set,0.083004,0.291667,0.129231,72,253,0.006003,0.026003,0.021092
+194 - Fake the Source of Data,0.398667,train_set,0.213483,0.128032,0.160067,742,445,0.061859,0.154648,0.037099
+34 - HTTP Response Splitting,0.436,train_set,0.142241,0.252874,0.182069,261,464,0.021759,0.054398,0.038683
+33 - HTTP Request Smuggling,0.440667,train_set,0.052632,0.142857,0.076923,14,38,0.001167,0.021167,0.003168
