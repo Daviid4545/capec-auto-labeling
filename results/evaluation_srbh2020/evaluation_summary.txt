@@ -1,0 +1,57 @@
+RESUMEN DE EVALUACION COMUN - SR-BH 2020
+======================================================================
+
+Archivo eval_set de referencia: sampling_srbh2020\eval_set.csv
+Filas en eval_set de referencia: 8006
+Etiquetas evaluadas: 13 -> ['000 - Normal', '272 - Protocol Manipulation', '242 - Code Injection', '88 - OS Command Injection', '126 - Path Traversal', '66 - SQL Injection', '16 - Dictionary-based Password Attack', '310 - Scanning for Vulnerable Software', '153 - Input Data Manipulation', '274 - HTTP Verb Tampering', '194 - Fake the Source of Data', '34 - HTTP Response Splitting', '33 - HTTP Request Smuggling']
+
+--- Metodos cargados ---
+  - rules
+  - embeddings
+  - weak_supervision
+  - llm_zero_shot
+  - llm_few_shot
+  - hitl_budget_50
+  - hitl_budget_100
+  - hitl_budget_200
+
+--- Tabla principal sugerida para memoria ---
+  - hitl_budget_100 | scope=eval_set | rows=8006 | micro_f1=0.722124 | macro_f1=0.346415 | hamming_loss=0.043746 | jaccard=0.724623 | subset_accuracy=0.711841 | kappa=0.698386
+  - rules | scope=eval_set | rows=8006 | micro_f1=0.795594 | macro_f1=0.524791 | hamming_loss=0.032274 | jaccard=0.803460 | subset_accuracy=0.794029 | kappa=0.778079
+  - embeddings | scope=eval_set | rows=8006 | micro_f1=0.629310 | macro_f1=0.197230 | hamming_loss=0.057332 | jaccard=0.631048 | subset_accuracy=0.629778 | kappa=0.598242
+  - weak_supervision | scope=eval_set | rows=8006 | micro_f1=0.712193 | macro_f1=0.322239 | hamming_loss=0.045312 | jaccard=0.714443 | subset_accuracy=0.701599 | kappa=0.687606
+  - llm_few_shot | scope=llm_eval_subset | rows=100 | micro_f1=0.615385 | macro_f1=0.460743 | hamming_loss=0.065385 | jaccard=0.619167 | subset_accuracy=0.570000 | kappa=0.579694
+
+--- Comparacion principal sobre eval_set ---
+  - rules | micro_f1=0.795594 | macro_f1=0.524791 | hamming_loss=0.032274
+  - hitl_budget_200 | micro_f1=0.731910 | macro_f1=0.372465 | hamming_loss=0.042218
+  - hitl_budget_100 | micro_f1=0.722124 | macro_f1=0.346415 | hamming_loss=0.043746
+  - hitl_budget_50 | micro_f1=0.717486 | macro_f1=0.335142 | hamming_loss=0.044476
+  - weak_supervision | micro_f1=0.712193 | macro_f1=0.322239 | hamming_loss=0.045312
+  - embeddings | micro_f1=0.629310 | macro_f1=0.197230 | hamming_loss=0.057332
+
+--- Comparacion LLM sobre llm_eval_subset_srbh2020 ---
+  - llm_few_shot | micro_f1=0.615385 | macro_f1=0.460743 | hamming_loss=0.065385
+  - llm_zero_shot | micro_f1=0.525424 | macro_f1=0.393400 | hamming_loss=0.086154
+
+--- Analisis HITL por presupuesto ---
+  - budget=50 | micro_f1=0.717486 | macro_f1=0.335142 | hamming_loss=0.044476
+  - budget=100 | micro_f1=0.722124 | macro_f1=0.346415 | hamming_loss=0.043746
+  - budget=200 | micro_f1=0.731910 | macro_f1=0.372465 | hamming_loss=0.042218
+
+--- Notas de interpretacion ---
+La comparacion principal entre reglas, embeddings, supervision debil y HITL se realiza sobre eval_set. Las metricas de LLM se calculan sobre llm_eval_subset_srbh2020 por coste computacional, por lo que la comparacion directa mas fuerte dentro de LLM es zero-shot frente a few-shot.
+El escenario HITL usa simulacion oracle: las etiquetas originales corrigen las instancias priorizadas. Debe interpretarse como estimacion del impacto potencial de una revision humana dirigida, no como tecnica automatica pura.
+Para la tabla final del TFM se recomienda usar main_results_table.csv, explicando explicitamente el scope de cada metodo.
+
+--- Archivos generados ---
+  - evaluation_srbh2020\method_catalog.csv
+  - evaluation_srbh2020\overall_metrics.csv
+  - evaluation_srbh2020\main_results_table.csv
+  - evaluation_srbh2020\eval_set_comparison_table.csv
+  - evaluation_srbh2020\llm_comparison_table.csv
+  - evaluation_srbh2020\hitl_budget_comparison_table.csv
+  - evaluation_srbh2020\metric_deltas.csv
+  - evaluation_srbh2020\per_label_metrics.csv
+  - evaluation_srbh2020\confusion_matrices_per_label.csv
+  - evaluation_srbh2020\agreement_between_methods_eval_set.csv

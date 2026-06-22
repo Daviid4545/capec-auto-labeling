@@ -1,0 +1,7 @@
+method,display_name,family,rows,micro_f1,macro_f1,hamming_loss,jaccard_samples,subset_accuracy,cohen_kappa_flat,delta_vs_weak_supervision_micro_f1,delta_vs_weak_supervision_macro_f1,delta_vs_weak_supervision_hamming_loss,notes
+rules,Reglas / heuristicas,reglas_heuristicas,8006,0.795594,0.524791,0.032274,0.80346,0.794029,0.778079,0.083401,0.202552,-0.013038,Baseline interpretable basada en reglas manuales.
+hitl_budget_200,"Humano en el bucle simulado, budget 200",hitl_simulado,8006,0.73191,0.372465,0.042218,0.734241,0.721459,0.709,0.019716,0.050226,-0.003094,Revision humana simulada con oracle sobre 200 casos priorizados.
+hitl_budget_100,"Humano en el bucle simulado, budget 100",hitl_simulado,8006,0.722124,0.346415,0.043746,0.724623,0.711841,0.698386,0.009931,0.024176,-0.001566,Revision humana simulada con oracle sobre 100 casos priorizados; escenario principal HITL.
+hitl_budget_50,"Humano en el bucle simulado, budget 50",hitl_simulado,8006,0.717486,0.335142,0.044476,0.719877,0.707095,0.693351,0.005292,0.012903,-0.000836,Revision humana simulada con oracle sobre 50 casos priorizados.
+weak_supervision,Supervision debil / distante,supervision_debil,8006,0.712193,0.322239,0.045312,0.714443,0.701599,0.687606,0.0,0.0,0.0,Agregacion ponderada de fuentes debiles.
+embeddings,Similaridad / embeddings,similaridad_embeddings,8006,0.62931,0.19723,0.057332,0.631048,0.629778,0.598242,-0.082884,-0.125009,0.01202,Modelo de embeddings congelado con umbrales calibrados en train_set.

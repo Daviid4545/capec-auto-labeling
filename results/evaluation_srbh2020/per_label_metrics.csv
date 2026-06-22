@@ -1,0 +1,105 @@
+method,display_name,family,scope,comparison_group,label,support,predicted,precision,recall,f1,cohen_kappa
+rules,Reglas / heuristicas,reglas_heuristicas,eval_set,eval_set_main,000 - Normal,4628,4848,0.838284,0.878133,0.857746,0.651776
+rules,Reglas / heuristicas,reglas_heuristicas,eval_set,eval_set_main,272 - Protocol Manipulation,81,5,0.4,0.024691,0.046512,0.045389
+rules,Reglas / heuristicas,reglas_heuristicas,eval_set,eval_set_main,242 - Code Injection,139,31,0.225806,0.05036,0.082353,0.076505
+rules,Reglas / heuristicas,reglas_heuristicas,eval_set,eval_set_main,88 - OS Command Injection,66,169,0.112426,0.287879,0.161702,0.151643
+rules,Reglas / heuristicas,reglas_heuristicas,eval_set,eval_set_main,126 - Path Traversal,185,479,0.373695,0.967568,0.539157,0.523263
+rules,Reglas / heuristicas,reglas_heuristicas,eval_set,eval_set_main,66 - SQL Injection,2206,1616,0.961634,0.704442,0.813187,0.756434
+rules,Reglas / heuristicas,reglas_heuristicas,eval_set,eval_set_main,16 - Dictionary-based Password Attack,16,25,0.64,1.0,0.780488,0.779952
+rules,Reglas / heuristicas,reglas_heuristicas,eval_set,eval_set_main,310 - Scanning for Vulnerable Software,24,25,0.96,1.0,0.979592,0.979529
+rules,Reglas / heuristicas,reglas_heuristicas,eval_set,eval_set_main,153 - Input Data Manipulation,20,252,0.015873,0.2,0.029412,0.024898
+rules,Reglas / heuristicas,reglas_heuristicas,eval_set,eval_set_main,274 - HTTP Verb Tampering,48,74,0.648649,1.0,0.786885,0.785324
+rules,Reglas / heuristicas,reglas_heuristicas,eval_set,eval_set_main,194 - Fake the Source of Data,495,617,0.722853,0.90101,0.802158,0.787584
+rules,Reglas / heuristicas,reglas_heuristicas,eval_set,eval_set_main,34 - HTTP Response Splitting,174,195,0.892308,1.0,0.943089,0.941751
+rules,Reglas / heuristicas,reglas_heuristicas,eval_set,eval_set_main,33 - HTTP Request Smuggling,9,6,0.0,0.0,0.0,-0.0009
+embeddings,Similaridad / embeddings,similaridad_embeddings,eval_set,eval_set_main,000 - Normal,4628,5609,0.715992,0.867761,0.784605,0.412353
+embeddings,Similaridad / embeddings,similaridad_embeddings,eval_set,eval_set_main,272 - Protocol Manipulation,81,91,0.0,0.0,0.0,-0.010821
+embeddings,Similaridad / embeddings,similaridad_embeddings,eval_set,eval_set_main,242 - Code Injection,139,153,0.065359,0.071942,0.068493,0.051231
+embeddings,Similaridad / embeddings,similaridad_embeddings,eval_set,eval_set_main,88 - OS Command Injection,66,143,0.0,0.0,0.0,-0.01141
+embeddings,Similaridad / embeddings,similaridad_embeddings,eval_set,eval_set_main,126 - Path Traversal,185,212,0.042453,0.048649,0.04534,0.021184
+embeddings,Similaridad / embeddings,similaridad_embeddings,eval_set,eval_set_main,66 - SQL Injection,2206,895,0.984358,0.399365,0.568204,0.486536
+embeddings,Similaridad / embeddings,similaridad_embeddings,eval_set,eval_set_main,16 - Dictionary-based Password Attack,16,55,0.236364,0.8125,0.366197,0.364229
+embeddings,Similaridad / embeddings,similaridad_embeddings,eval_set,eval_set_main,310 - Scanning for Vulnerable Software,24,109,0.06422,0.291667,0.105263,0.100845
+embeddings,Similaridad / embeddings,similaridad_embeddings,eval_set,eval_set_main,153 - Input Data Manipulation,20,1,0.0,0.0,0.0,-0.000238
+embeddings,Similaridad / embeddings,similaridad_embeddings,eval_set,eval_set_main,274 - HTTP Verb Tampering,48,169,0.076923,0.270833,0.119816,0.111518
+embeddings,Similaridad / embeddings,similaridad_embeddings,eval_set,eval_set_main,194 - Fake the Source of Data,495,264,0.234848,0.125253,0.163373,0.125771
+embeddings,Similaridad / embeddings,similaridad_embeddings,eval_set,eval_set_main,34 - HTTP Response Splitting,174,297,0.178451,0.304598,0.225053,0.203214
+embeddings,Similaridad / embeddings,similaridad_embeddings,eval_set,eval_set_main,33 - HTTP Request Smuggling,9,8,0.125,0.111111,0.117647,0.116713
+weak_supervision,Supervision debil / distante,supervision_debil,eval_set,eval_set_main,000 - Normal,4628,6312,0.69962,0.954192,0.807313,0.421275
+weak_supervision,Supervision debil / distante,supervision_debil,eval_set,eval_set_main,272 - Protocol Manipulation,81,0,0.0,0.0,0.0,0.0
+weak_supervision,Supervision debil / distante,supervision_debil,eval_set,eval_set_main,242 - Code Injection,139,58,0.103448,0.043165,0.060914,0.051214
+weak_supervision,Supervision debil / distante,supervision_debil,eval_set,eval_set_main,88 - OS Command Injection,66,91,0.076923,0.106061,0.089172,0.080384
+weak_supervision,Supervision debil / distante,supervision_debil,eval_set,eval_set_main,126 - Path Traversal,185,245,0.134694,0.178378,0.153488,0.130595
+weak_supervision,Supervision debil / distante,supervision_debil,eval_set,eval_set_main,66 - SQL Injection,2206,1097,0.990884,0.492747,0.65819,0.581613
+weak_supervision,Supervision debil / distante,supervision_debil,eval_set,eval_set_main,16 - Dictionary-based Password Attack,16,29,0.448276,0.8125,0.577778,0.576687
+weak_supervision,Supervision debil / distante,supervision_debil,eval_set,eval_set_main,310 - Scanning for Vulnerable Software,24,34,0.352941,0.5,0.413793,0.411726
+weak_supervision,Supervision debil / distante,supervision_debil,eval_set,eval_set_main,153 - Input Data Manipulation,20,25,0.04,0.05,0.044444,0.041785
+weak_supervision,Supervision debil / distante,supervision_debil,eval_set,eval_set_main,274 - HTTP Verb Tampering,48,81,0.345679,0.583333,0.434109,0.429815
+weak_supervision,Supervision debil / distante,supervision_debil,eval_set,eval_set_main,194 - Fake the Source of Data,495,228,0.72807,0.335354,0.459198,0.437253
+weak_supervision,Supervision debil / distante,supervision_debil,eval_set,eval_set_main,34 - HTTP Response Splitting,174,95,0.694737,0.37931,0.490706,0.482766
+weak_supervision,Supervision debil / distante,supervision_debil,eval_set,eval_set_main,33 - HTTP Request Smuggling,9,0,0.0,0.0,0.0,0.0
+llm_zero_shot,LLM zero-shot,llm,llm_eval_subset,llm_subset,000 - Normal,40,34,0.823529,0.7,0.756757,0.615385
+llm_zero_shot,LLM zero-shot,llm,llm_eval_subset,llm_subset,272 - Protocol Manipulation,5,0,0.0,0.0,0.0,0.0
+llm_zero_shot,LLM zero-shot,llm,llm_eval_subset,llm_subset,242 - Code Injection,7,4,0.5,0.285714,0.363636,0.329502
+llm_zero_shot,LLM zero-shot,llm,llm_eval_subset,llm_subset,88 - OS Command Injection,7,0,0.0,0.0,0.0,0.0
+llm_zero_shot,LLM zero-shot,llm,llm_eval_subset,llm_subset,126 - Path Traversal,5,23,0.217391,1.0,0.357143,0.299611
+llm_zero_shot,LLM zero-shot,llm,llm_eval_subset,llm_subset,66 - SQL Injection,5,7,0.571429,0.8,0.666667,0.646018
+llm_zero_shot,LLM zero-shot,llm,llm_eval_subset,llm_subset,16 - Dictionary-based Password Attack,5,11,0.454545,1.0,0.625,0.597315
+llm_zero_shot,LLM zero-shot,llm,llm_eval_subset,llm_subset,310 - Scanning for Vulnerable Software,5,13,0.384615,1.0,0.555556,0.520958
+llm_zero_shot,LLM zero-shot,llm,llm_eval_subset,llm_subset,153 - Input Data Manipulation,5,13,0.076923,0.2,0.111111,0.041916
+llm_zero_shot,LLM zero-shot,llm,llm_eval_subset,llm_subset,274 - HTTP Verb Tampering,5,6,0.333333,0.4,0.363636,0.326923
+llm_zero_shot,LLM zero-shot,llm,llm_eval_subset,llm_subset,194 - Fake the Source of Data,5,1,1.0,0.2,0.333333,0.322034
+llm_zero_shot,LLM zero-shot,llm,llm_eval_subset,llm_subset,34 - HTTP Response Splitting,8,15,0.533333,1.0,0.695652,0.660194
+llm_zero_shot,LLM zero-shot,llm,llm_eval_subset,llm_subset,33 - HTTP Request Smuggling,5,2,0.5,0.2,0.285714,0.264706
+llm_few_shot,LLM few-shot,llm,llm_eval_subset,llm_subset,000 - Normal,40,59,0.59322,0.875,0.707071,0.440154
+llm_few_shot,LLM few-shot,llm,llm_eval_subset,llm_subset,272 - Protocol Manipulation,5,4,0.5,0.4,0.444444,0.418605
+llm_few_shot,LLM few-shot,llm,llm_eval_subset,llm_subset,242 - Code Injection,7,10,0.7,1.0,0.823529,0.807692
+llm_few_shot,LLM few-shot,llm,llm_eval_subset,llm_subset,88 - OS Command Injection,7,1,1.0,0.142857,0.25,0.236641
+llm_few_shot,LLM few-shot,llm,llm_eval_subset,llm_subset,126 - Path Traversal,5,11,0.454545,1.0,0.625,0.597315
+llm_few_shot,LLM few-shot,llm,llm_eval_subset,llm_subset,66 - SQL Injection,5,6,0.833333,1.0,0.909091,0.903846
+llm_few_shot,LLM few-shot,llm,llm_eval_subset,llm_subset,16 - Dictionary-based Password Attack,5,0,0.0,0.0,0.0,0.0
+llm_few_shot,LLM few-shot,llm,llm_eval_subset,llm_subset,310 - Scanning for Vulnerable Software,5,6,0.833333,1.0,0.909091,0.903846
+llm_few_shot,LLM few-shot,llm,llm_eval_subset,llm_subset,153 - Input Data Manipulation,5,2,0.0,0.0,0.0,-0.029412
+llm_few_shot,LLM few-shot,llm,llm_eval_subset,llm_subset,274 - HTTP Verb Tampering,5,2,1.0,0.4,0.571429,0.558824
+llm_few_shot,LLM few-shot,llm,llm_eval_subset,llm_subset,194 - Fake the Source of Data,5,0,0.0,0.0,0.0,0.0
+llm_few_shot,LLM few-shot,llm,llm_eval_subset,llm_subset,34 - HTTP Response Splitting,8,8,0.75,0.75,0.75,0.728261
+llm_few_shot,LLM few-shot,llm,llm_eval_subset,llm_subset,33 - HTTP Request Smuggling,5,5,0.0,0.0,0.0,-0.052632
+hitl_budget_50,"Humano en el bucle simulado, budget 50",hitl_simulado,eval_set,hitl_budget,000 - Normal,4628,6269,0.704419,0.954192,0.810498,0.434123
+hitl_budget_50,"Humano en el bucle simulado, budget 50",hitl_simulado,eval_set,hitl_budget,272 - Protocol Manipulation,81,0,0.0,0.0,0.0,0.0
+hitl_budget_50,"Humano en el bucle simulado, budget 50",hitl_simulado,eval_set,hitl_budget,242 - Code Injection,139,60,0.133333,0.057554,0.080402,0.070672
+hitl_budget_50,"Humano en el bucle simulado, budget 50",hitl_simulado,eval_set,hitl_budget,88 - OS Command Injection,66,93,0.096774,0.136364,0.113208,0.104572
+hitl_budget_50,"Humano en el bucle simulado, budget 50",hitl_simulado,eval_set,hitl_budget,126 - Path Traversal,185,260,0.184615,0.259459,0.21573,0.193966
+hitl_budget_50,"Humano en el bucle simulado, budget 50",hitl_simulado,eval_set,hitl_budget,66 - SQL Injection,2206,1117,0.991047,0.501813,0.666265,0.590387
+hitl_budget_50,"Humano en el bucle simulado, budget 50",hitl_simulado,eval_set,hitl_budget,16 - Dictionary-based Password Attack,16,29,0.448276,0.8125,0.577778,0.576687
+hitl_budget_50,"Humano en el bucle simulado, budget 50",hitl_simulado,eval_set,hitl_budget,310 - Scanning for Vulnerable Software,24,34,0.352941,0.5,0.413793,0.411726
+hitl_budget_50,"Humano en el bucle simulado, budget 50",hitl_simulado,eval_set,hitl_budget,153 - Input Data Manipulation,20,26,0.076923,0.1,0.086957,0.084371
+hitl_budget_50,"Humano en el bucle simulado, budget 50",hitl_simulado,eval_set,hitl_budget,274 - HTTP Verb Tampering,48,81,0.345679,0.583333,0.434109,0.429815
+hitl_budget_50,"Humano en el bucle simulado, budget 50",hitl_simulado,eval_set,hitl_budget,194 - Fake the Source of Data,495,231,0.731602,0.341414,0.465565,0.443676
+hitl_budget_50,"Humano en el bucle simulado, budget 50",hitl_simulado,eval_set,hitl_budget,34 - HTTP Response Splitting,174,94,0.702128,0.37931,0.492537,0.484681
+hitl_budget_50,"Humano en el bucle simulado, budget 50",hitl_simulado,eval_set,hitl_budget,33 - HTTP Request Smuggling,9,0,0.0,0.0,0.0,0.0
+hitl_budget_100,"Humano en el bucle simulado, budget 100",hitl_simulado,eval_set,hitl_budget,000 - Normal,4628,6231,0.708714,0.954192,0.813335,0.445438
+hitl_budget_100,"Humano en el bucle simulado, budget 100",hitl_simulado,eval_set,hitl_budget,272 - Protocol Manipulation,81,0,0.0,0.0,0.0,0.0
+hitl_budget_100,"Humano en el bucle simulado, budget 100",hitl_simulado,eval_set,hitl_budget,242 - Code Injection,139,75,0.306667,0.165468,0.214953,0.205282
+hitl_budget_100,"Humano en el bucle simulado, budget 100",hitl_simulado,eval_set,hitl_budget,88 - OS Command Injection,66,93,0.096774,0.136364,0.113208,0.104572
+hitl_budget_100,"Humano en el bucle simulado, budget 100",hitl_simulado,eval_set,hitl_budget,126 - Path Traversal,185,260,0.184615,0.259459,0.21573,0.193966
+hitl_budget_100,"Humano en el bucle simulado, budget 100",hitl_simulado,eval_set,hitl_budget,66 - SQL Injection,2206,1140,0.991228,0.512239,0.675433,0.600406
+hitl_budget_100,"Humano en el bucle simulado, budget 100",hitl_simulado,eval_set,hitl_budget,16 - Dictionary-based Password Attack,16,29,0.448276,0.8125,0.577778,0.576687
+hitl_budget_100,"Humano en el bucle simulado, budget 100",hitl_simulado,eval_set,hitl_budget,310 - Scanning for Vulnerable Software,24,34,0.352941,0.5,0.413793,0.411726
+hitl_budget_100,"Humano en el bucle simulado, budget 100",hitl_simulado,eval_set,hitl_budget,153 - Input Data Manipulation,20,26,0.076923,0.1,0.086957,0.084371
+hitl_budget_100,"Humano en el bucle simulado, budget 100",hitl_simulado,eval_set,hitl_budget,274 - HTTP Verb Tampering,48,81,0.345679,0.583333,0.434109,0.429815
+hitl_budget_100,"Humano en el bucle simulado, budget 100",hitl_simulado,eval_set,hitl_budget,194 - Fake the Source of Data,495,231,0.731602,0.341414,0.465565,0.443676
+hitl_budget_100,"Humano en el bucle simulado, budget 100",hitl_simulado,eval_set,hitl_budget,34 - HTTP Response Splitting,174,94,0.702128,0.37931,0.492537,0.484681
+hitl_budget_100,"Humano en el bucle simulado, budget 100",hitl_simulado,eval_set,hitl_budget,33 - HTTP Request Smuggling,9,0,0.0,0.0,0.0,0.0
+hitl_budget_200,"Humano en el bucle simulado, budget 200",hitl_simulado,eval_set,hitl_budget,000 - Normal,4628,6154,0.717582,0.954192,0.819143,0.468253
+hitl_budget_200,"Humano en el bucle simulado, budget 200",hitl_simulado,eval_set,hitl_budget,272 - Protocol Manipulation,81,3,1.0,0.037037,0.071429,0.070757
+hitl_budget_200,"Humano en el bucle simulado, budget 200",hitl_simulado,eval_set,hitl_budget,242 - Code Injection,139,78,0.333333,0.18705,0.239631,0.230021
+hitl_budget_200,"Humano en el bucle simulado, budget 200",hitl_simulado,eval_set,hitl_budget,88 - OS Command Injection,66,96,0.125,0.181818,0.148148,0.139743
+hitl_budget_200,"Humano en el bucle simulado, budget 200",hitl_simulado,eval_set,hitl_budget,126 - Path Traversal,185,274,0.226277,0.335135,0.270153,0.249446
+hitl_budget_200,"Humano en el bucle simulado, budget 200",hitl_simulado,eval_set,hitl_budget,66 - SQL Injection,2206,1174,0.991482,0.527652,0.688757,0.615078
+hitl_budget_200,"Humano en el bucle simulado, budget 200",hitl_simulado,eval_set,hitl_budget,16 - Dictionary-based Password Attack,16,29,0.448276,0.8125,0.577778,0.576687
+hitl_budget_200,"Humano en el bucle simulado, budget 200",hitl_simulado,eval_set,hitl_budget,310 - Scanning for Vulnerable Software,24,34,0.352941,0.5,0.413793,0.411726
+hitl_budget_200,"Humano en el bucle simulado, budget 200",hitl_simulado,eval_set,hitl_budget,153 - Input Data Manipulation,20,27,0.111111,0.15,0.12766,0.125149
+hitl_budget_200,"Humano en el bucle simulado, budget 200",hitl_simulado,eval_set,hitl_budget,274 - HTTP Verb Tampering,48,83,0.361446,0.625,0.458015,0.453866
+hitl_budget_200,"Humano en el bucle simulado, budget 200",hitl_simulado,eval_set,hitl_budget,194 - Fake the Source of Data,495,246,0.747967,0.371717,0.496626,0.475077
+hitl_budget_200,"Humano en el bucle simulado, budget 200",hitl_simulado,eval_set,hitl_budget,34 - HTTP Response Splitting,174,101,0.722772,0.41954,0.530909,0.523299
+hitl_budget_200,"Humano en el bucle simulado, budget 200",hitl_simulado,eval_set,hitl_budget,33 - HTTP Request Smuggling,9,0,0.0,0.0,0.0,0.0

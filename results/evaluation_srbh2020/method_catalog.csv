@@ -1,0 +1,9 @@
+method,display_name,family,scope,comparison_group,is_main_result,is_automatic,path,notes
+rules,Reglas / heuristicas,reglas_heuristicas,eval_set,eval_set_main,True,True,rules_labeling_srbh2020/predictions_rules.csv,Baseline interpretable basada en reglas manuales.
+embeddings,Similaridad / embeddings,similaridad_embeddings,eval_set,eval_set_main,True,True,embeddings_labeling_srbh2020/predictions_embeddings.csv,Modelo de embeddings congelado con umbrales calibrados en train_set.
+weak_supervision,Supervision debil / distante,supervision_debil,eval_set,eval_set_main,True,True,weak_supervision_srbh2020/predictions_weak_supervision.csv,Agregacion ponderada de fuentes debiles.
+llm_zero_shot,LLM zero-shot,llm,llm_eval_subset,llm_subset,False,True,llm_labeling_srbh2020/predictions_llm_zero_shot.csv,"LLM local sin ejemplos, evaluado sobre subconjunto LLM."
+llm_few_shot,LLM few-shot,llm,llm_eval_subset,llm_subset,True,True,llm_labeling_srbh2020/predictions_llm_few_shot.csv,LLM local con ejemplos de train_set; variante principal de la familia LLM.
+hitl_budget_50,"Humano en el bucle simulado, budget 50",hitl_simulado,eval_set,hitl_budget,False,False,human_in_the_loop_srbh2020/budget_50/predictions_human_in_the_loop.csv,Revision humana simulada con oracle sobre 50 casos priorizados.
+hitl_budget_100,"Humano en el bucle simulado, budget 100",hitl_simulado,eval_set,hitl_budget,True,False,human_in_the_loop_srbh2020/budget_100/predictions_human_in_the_loop.csv,Revision humana simulada con oracle sobre 100 casos priorizados; escenario principal HITL.
+hitl_budget_200,"Humano en el bucle simulado, budget 200",hitl_simulado,eval_set,hitl_budget,False,False,human_in_the_loop_srbh2020/budget_200/predictions_human_in_the_loop.csv,Revision humana simulada con oracle sobre 200 casos priorizados.

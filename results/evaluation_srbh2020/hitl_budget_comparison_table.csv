@@ -1,0 +1,4 @@
+method,display_name,budget,rows,micro_f1,macro_f1,hamming_loss,jaccard_samples,subset_accuracy,cohen_kappa_flat,delta_vs_weak_supervision_micro_f1,delta_vs_weak_supervision_macro_f1,delta_vs_weak_supervision_hamming_loss,notes
+hitl_budget_50,"Humano en el bucle simulado, budget 50",50,8006,0.717486,0.335142,0.044476,0.719877,0.707095,0.693351,0.005292,0.012903,-0.000836,Revision humana simulada con oracle sobre 50 casos priorizados.
+hitl_budget_100,"Humano en el bucle simulado, budget 100",100,8006,0.722124,0.346415,0.043746,0.724623,0.711841,0.698386,0.009931,0.024176,-0.001566,Revision humana simulada con oracle sobre 100 casos priorizados; escenario principal HITL.
+hitl_budget_200,"Humano en el bucle simulado, budget 200",200,8006,0.73191,0.372465,0.042218,0.734241,0.721459,0.709,0.019716,0.050226,-0.003094,Revision humana simulada con oracle sobre 200 casos priorizados.

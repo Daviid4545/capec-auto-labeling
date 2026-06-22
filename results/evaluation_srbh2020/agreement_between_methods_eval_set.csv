@@ -1,0 +1,16 @@
+method_a,method_b,rows,avg_jaccard_agreement,exact_match_agreement,cohen_kappa_flat
+rules,embeddings,8006,0.667749,0.663253,0.629596
+rules,weak_supervision,8006,0.794446,0.779041,0.77024
+rules,hitl_budget_50,8006,0.79938,0.784037,0.775389
+rules,hitl_budget_100,8006,0.802252,0.78691,0.778394
+rules,hitl_budget_200,8006,0.806635,0.787909,0.78675
+embeddings,weak_supervision,8006,0.859106,0.842368,0.848451
+embeddings,hitl_budget_50,8006,0.858544,0.841869,0.847843
+embeddings,hitl_budget_100,8006,0.858793,0.842118,0.84811
+embeddings,hitl_budget_200,8006,0.850674,0.834,0.839169
+weak_supervision,hitl_budget_50,8006,0.994567,0.994504,0.994301
+weak_supervision,hitl_budget_100,8006,0.98982,0.989758,0.989323
+weak_supervision,hitl_budget_200,8006,0.980202,0.98014,0.978914
+hitl_budget_50,hitl_budget_100,8006,0.995254,0.995254,0.995022
+hitl_budget_50,hitl_budget_200,8006,0.985636,0.985636,0.984611
+hitl_budget_100,hitl_budget_200,8006,0.990382,0.990382,0.989588

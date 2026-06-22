@@ -1,0 +1,6 @@
+method,display_name,family,scope,rows,micro_f1,macro_f1,hamming_loss,jaccard_samples,subset_accuracy,cohen_kappa_flat,notes
+hitl_budget_100,"Humano en el bucle simulado, budget 100",hitl_simulado,eval_set,8006,0.722124,0.346415,0.043746,0.724623,0.711841,0.698386,Revision humana simulada con oracle sobre 100 casos priorizados; escenario principal HITL.
+rules,Reglas / heuristicas,reglas_heuristicas,eval_set,8006,0.795594,0.524791,0.032274,0.80346,0.794029,0.778079,Baseline interpretable basada en reglas manuales.
+embeddings,Similaridad / embeddings,similaridad_embeddings,eval_set,8006,0.62931,0.19723,0.057332,0.631048,0.629778,0.598242,Modelo de embeddings congelado con umbrales calibrados en train_set.
+weak_supervision,Supervision debil / distante,supervision_debil,eval_set,8006,0.712193,0.322239,0.045312,0.714443,0.701599,0.687606,Agregacion ponderada de fuentes debiles.
+llm_few_shot,LLM few-shot,llm,llm_eval_subset,100,0.615385,0.460743,0.065385,0.619167,0.57,0.579694,LLM local con ejemplos de train_set; variante principal de la familia LLM.
