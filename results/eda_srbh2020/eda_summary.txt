@@ -1,0 +1,38 @@
+ANÁLISIS EXPLORATORIO INICIAL - SR-BH 2020
+=======================================================
+
+Filas totales del CSV: 907815
+Columnas totales: 38
+Características: 24
+Columnas de etiquetas: 14
+Filas sin ninguna característica HTTP rellena: 2
+Filas con Normal y alguna etiqueta de ataque simultánea: 0
+
+Distribución por número total de etiquetas activas:
+  1 etiqueta(s): 898577
+  2 etiqueta(s): 8132
+  3 etiqueta(s): 1088
+  4 etiqueta(s): 18
+
+Distribución por número de etiquetas de ataque activas:
+  0 etiqueta(s) de ataque: 525195
+  1 etiqueta(s) de ataque: 373382
+  2 etiqueta(s) de ataque: 8132
+  3 etiqueta(s) de ataque: 1088
+  4 etiqueta(s) de ataque: 18
+
+Distribución de etiquetas:
+  000 - Normal: 525195 (57.8526%)
+  66 - SQL Injection: 250311 (27.5729%)
+  194 - Fake the Source of Data: 56145 (6.1846%)
+  126 - Path Traversal: 20992 (2.3124%)
+  34 - HTTP Response Splitting: 19738 (2.1742%)
+  242 - Code Injection: 15827 (1.7434%)
+  272 - Protocol Manipulation: 9153 (1.0082%)
+  88 - OS Command Injection: 7482 (0.8242%)
+  274 - HTTP Verb Tampering: 5437 (0.5989%)
+  310 - Scanning for Vulnerable Software: 2718 (0.2994%)
+  153 - Input Data Manipulation: 2272 (0.2503%)
+  16 - Dictionary-based Password Attack: 1847 (0.2035%)
+  33 - HTTP Request Smuggling: 1059 (0.1167%)
+  248 - Command Injection: 1 (0.0001%)
