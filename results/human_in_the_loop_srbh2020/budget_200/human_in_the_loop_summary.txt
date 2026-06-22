@@ -1,0 +1,54 @@
+RESUMEN DE HUMANO EN EL BUCLE
+============================================================
+
+Archivo de evaluacion: sampling_srbh2020/eval_set.csv
+Prediccion base: weak_supervision_srbh2020/predictions_weak_supervision.csv
+Presupuesto de revision: 200
+Modo de revision: simulated_oracle
+Revisiones aplicadas: 200
+Filas evaluadas: 8006
+Carpeta de salida: human_in_the_loop_srbh2020\budget_200
+
+--- Fuentes usadas para priorizacion ---
+  - base
+  - rules
+  - embeddings
+  - llm_few_shot
+  - llm_zero_shot
+
+--- Criterios de priorizacion ---
+  - desacuerdo entre tecnicas
+  - conflicto Normal frente a ataque
+  - incertidumbre/confianza cuando esta disponible
+  - posibles casos multietiqueta
+  - etiquetas predichas poco frecuentes
+
+--- Distribucion de etiquetas predichas tras HITL ---
+  - 000 - Normal: 6154
+  - 272 - Protocol Manipulation: 3
+  - 242 - Code Injection: 78
+  - 88 - OS Command Injection: 96
+  - 126 - Path Traversal: 274
+  - 66 - SQL Injection: 1174
+  - 16 - Dictionary-based Password Attack: 29
+  - 310 - Scanning for Vulnerable Software: 34
+  - 153 - Input Data Manipulation: 27
+  - 274 - HTTP Verb Tampering: 83
+  - 194 - Fake the Source of Data: 246
+  - 34 - HTTP Response Splitting: 101
+  - 33 - HTTP Request Smuggling: 0
+
+--- Metricas rapidas sobre eval_set ---
+  - rows: 8006
+  - micro_f1: 0.731910
+  - macro_f1: 0.372465
+  - micro_precision: 0.722738
+  - micro_recall: 0.741318
+  - macro_precision: 0.472168
+  - macro_recall: 0.392434
+  - hamming_loss: 0.042218
+  - jaccard_samples: 0.734241
+  - subset_accuracy: 0.721459
+
+--- Nota metodologica ---
+Se ha utilizado --simulate-oracle, por lo que las etiquetas originales se han usado para simular la revision humana de las instancias priorizadas. Este resultado debe interpretarse como una estimacion del impacto potencial de revisar manualmente un numero limitado de casos, no como una tecnica automatica pura.
