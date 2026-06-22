@@ -14,4 +14,4 @@ The scripts in this repository expect the original CSV file to be available loca
 
 `data_capec_multilabel.csv`
 
-Generated subsets and derived outputs are included in the repository when their size allows it.
+Generated subsets and derived outputs are included in the repository.
