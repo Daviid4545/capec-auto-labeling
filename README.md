@@ -233,7 +233,7 @@ results/plots_results_srbh2020/
 ### 10. CAPEC/Normal inter-label matrices
 
 ```bash
-python scripts/10_capec_confusion_matrices_srbh2020.py --out-dir results/plots_results_srbh2020
+python scripts/10_capec_confusion_matrices_srbh2020.py
 ```
 
 Main outputs:
