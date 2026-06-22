@@ -101,7 +101,7 @@ Reference:
 
 Sureda Riera, T., Bermejo Higuera, J. R., Bermejo Higuera, J., Sicilia Montalvo, J. A., & Martínez Herráiz, J. J. (2022). *SR-BH 2020 multi-label dataset* (Version 1.2) [Data set]. Harvard Dataverse. https://doi.org/10.7910/DVN/OGOIXX
 
-To reproduce the experiment, download the original CSV file and place it in the working directory with the following name:
+To reproduce the experiment, download the original CSV file and place it in the working directory from which the workflow will be executed, using the following name:
 
 ```text
 data_capec_multilabel.csv
@@ -129,10 +129,10 @@ ollama pull qwen2.5:7b-instruct
 
 The scripts are numbered according to the execution order used in the thesis. They should be executed sequentially from the same working directory.
 
-The examples below show two equivalent ways of running the scripts:
+The examples below show two possible ways of running the scripts, depending on where the script files are located:
 
-* **Recommended usage shown inside each script**, assuming the script file is in the current working directory.
-* **Execution from the repository root**, assuming the scripts remain inside the `scripts/` folder.
+* **Recommended usage shown inside each script**, assuming the .py files and the dataset are in the same working directory.
+* **Execution from the repository root**, assuming the scripts remain inside the scripts/ folder and the dataset CSV is placed in the repository root.
 
 In both cases, the generated folders must remain in the same working directory so that the following scripts can find the outputs from previous steps.
 
