@@ -1,0 +1,11 @@
+metric,value
+rows,8006
+micro_f1,0.717486
+macro_f1,0.335142
+micro_precision,0.708705
+micro_recall,0.726486
+macro_precision,0.366749
+macro_recall,0.355842
+hamming_loss,0.044476
+jaccard_samples,0.719877
+subset_accuracy,0.707095
