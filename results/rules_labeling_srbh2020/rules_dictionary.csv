@@ -1,0 +1,37 @@
+rule_id,label,field,type,pattern,description
+SQLI_01,66 - SQL Injection,all,regex_decoded,\bunion\s+(all\s+)?select\b,"Uso de UNION SELECT, patron clasico de SQL Injection."
+SQLI_02,66 - SQL Injection,all,keyword_decoded,information_schema,"Referencia a information_schema, frecuente en extraccion de metadatos SQL."
+SQLI_03,66 - SQL Injection,all,regex_decoded,"(\bor\b|\band\b)\s+['\""]?\d+['\""]?\s*=\s*['\""]?\d+",Condiciones booleanas del tipo OR 1=1 o AND 1=1.
+SQLI_04,66 - SQL Injection,all,regex_decoded,"\b(select|insert|update|delete|drop)\b.{0,80}\b(from|into|set|table|database)\b",Combinaciones de palabras clave SQL en una misma carga.
+SQLI_05,66 - SQL Injection,all,regex_decoded,"(\b(select|union|insert|update|delete|drop|where|from)\b.{0,80}(--|#|/\*)|(--|#|/\*).{0,80}\b(select|union|insert|update|delete|drop|where|from)\b)","Comentarios SQL, pero solo cuando aparecen cerca de palabras clave SQL para evitar falsos positivos."
+SQLI_06,66 - SQL Injection,all,regex_decoded,\b(sleep|benchmark|extractvalue|updatexml|load_file)\s*\(|\bwaitfor\s+delay\b,Funciones SQL habituales en inyecciones o pruebas temporales.
+PT_01,126 - Path Traversal,all,regex_decoded,\.\.[\\/],Secuencias ../ o ..\ para salto de directorios.
+PT_02,126 - Path Traversal,all,keyword_decoded,/etc/passwd,Acceso a fichero sensible de sistemas Unix.
+PT_03,126 - Path Traversal,all,regex_decoded,(\.svn/|\.git/|web-inf|wp-config\.php|boot\.ini|win\.ini|password\.properties),Acceso a ficheros internos o de configuracion mediante ruta.
+PT_04,126 - Path Traversal,all_raw,regex_raw,(%2e%2e(%2f|%5c)|%252e%252e(%252f|%255c)|\.\.%2f|\.\.%5c),Traversal URL-encoded. Se evita disparar por cualquier %2f aislado porque aparece en URLs normales.
+CODE_01,242 - Code Injection,all,regex_decoded,<\s*script\b|javascript\s*:|onerror\s*=|onload\s*=,Patrones de inyeccion de script/XSS reflejados en la peticion.
+CODE_02,242 - Code Injection,all,regex_decoded,<\?php|php://input|php://filter|allow_url_include|auto_prepend_file,Carga PHP o wrappers PHP usados para inyectar codigo.
+CODE_03,242 - Code Injection,all,regex_decoded,\b(eval|assert|base64_decode|create_function)\s*\(,Funciones asociadas a ejecucion u ofuscacion de codigo.
+OSCI_01,88 - OS Command Injection,all,regex_decoded,(;|\||&&|\$\(|`)\s*(whoami|id|uname|cat|ls|dir|wget|curl|chmod|nc|netcat|ping|bash|sh)\b,Encadenamiento de comandos del sistema operativo.
+OSCI_02,88 - OS Command Injection,all,regex_decoded,(/bin/sh|/bin/bash|cmd\.exe|powershell),Invocacion directa de shells o interpretes del sistema.
+OSCI_03,88 - OS Command Injection,request_body,regex_decoded,\b(wget|curl|chmod|cat)\b,Comandos del sistema dentro del cuerpo de la peticion.
+DICT_01,16 - Dictionary-based Password Attack,request_http_request,regex_decoded,(wp-login\.php|/login|/signin|/admin|/administrator),Peticion dirigida a endpoint de autenticacion.
+DICT_02,16 - Dictionary-based Password Attack,request_body,regex_decoded,(log|user|username|pwd|pass|password)=,Envio de parametros de usuario y contrasena en la peticion.
+DICT_03,16 - Dictionary-based Password Attack,request_body,regex_decoded,(admin|root|test|password|123456),Credenciales comunes en cuerpo de autenticacion.
+SCAN_01,310 - Scanning for Vulnerable Software,all,regex_decoded,\b(nmap|nikto|sqlmap|wpscan|nessus|openvas|acunetix|masscan|dirbuster|gobuster|ffuf|wfuzz|zaproxy)\b,Herramientas conocidas de escaneo o enumeracion.
+SCAN_02,310 - Scanning for Vulnerable Software,request_http_request,regex_decoded,(nmaplowercheck|/cfide/administrator|/readme\.html|/license\.txt|/cgi-bin/),Rutas tipicas de enumeracion o comprobacion de software vulnerable.
+IDM_01,153 - Input Data Manipulation,request_content_type,regex_decoded,(\.\.[\\/]|/etc/passwd|%00|wp-config\.php),Manipulacion de Content-Type con rutas o valores no esperados.
+IDM_02,153 - Input Data Manipulation,all_raw,regex_raw,(%00|%25(00|2e|2f|5c)),Null byte o doble encoding orientado a manipulacion de entradas.
+IDM_03,153 - Input Data Manipulation,all,regex_decoded,"(\$\{[^}]+\}|\{\{[^}]+\}\}|0x[0-9a-f]{12,})",Patrones de manipulacion generica: template injection o valores hexadecimales largos.
+VERB_01,274 - HTTP Verb Tampering,request_http_method,method_set,TRACE|TRACK|DEBUG|PROPFIND|MKCOL|COPY|MOVE|LOCK|UNLOCK|PATCH|CONNECT,Uso de metodos HTTP poco habituales o potencialmente peligrosos.
+VERB_02,274 - HTTP Verb Tampering,request_http_method,method_uncommon,not in GET|POST|HEAD|OPTIONS,Metodo HTTP no comun observado en la peticion.
+FAKE_01,194 - Fake the Source of Data,request_http_request,regex_decoded,(https?://|www\.google\.com|file://),URL externa incrustada dentro de la ruta solicitada.
+FAKE_02,194 - Fake the Source of Data,request_origin,regex_decoded,(null|localhost|127\.0\.0\.1|file://|javascript:),Origin sospechoso o no esperable.
+FAKE_03,194 - Fake the Source of Data,request_referer,regex_decoded,(localhost|127\.0\.0\.1|file://|javascript:),Referer sospechoso o falsificado.
+HRS_01,34 - HTTP Response Splitting,all_raw,regex_raw,%0d%0a|%0a%0d|%0d|%0a,Secuencias CR/LF codificadas en la peticion.
+HRS_02,34 - HTTP Response Splitting,all,regex_decoded,(set-cookie:|location:|content-length:|content-type:),Cabeceras inyectadas tras decodificacion.
+HSMUG_01,33 - HTTP Request Smuggling,request_body,regex_raw,%0d%0a|%0a|%0d,CR/LF codificado dentro del cuerpo de una peticion POST.
+HSMUG_02,33 - HTTP Request Smuggling,all,regex_decoded,transfer-encoding\s*:\s*chunked|content-length\s*:,Cabeceras asociadas a desincronizacion HTTP.
+PROTO_01,272 - Protocol Manipulation,all,regex_decoded,(\.svn/wc\.db|\.svn/entries|\.git/head|\.git/config),Acceso a metadatos internos que alteran el uso esperado del protocolo/aplicacion.
+PROTO_02,272 - Protocol Manipulation,all,regex_decoded,(b4ckdoor|backdoor|127\.0\.0\.1|remote_syslog|remotesyslogsupported),Indicadores de manipulacion de protocolo o configuracion remota.
+PROTO_03,272 - Protocol Manipulation,request_http_protocol,regex_decoded,http/(0\.9|1\.2|2\.0),Versiones HTTP no esperadas en el contexto del dataset.

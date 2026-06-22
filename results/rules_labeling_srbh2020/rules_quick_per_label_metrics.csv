@@ -1,0 +1,14 @@
+label,support,predicted,precision,recall,f1,kappa
+000 - Normal,4628,4848,0.838284,0.878133,0.857746,0.651776
+272 - Protocol Manipulation,81,5,0.4,0.024691,0.046512,0.045389
+242 - Code Injection,139,31,0.225806,0.05036,0.082353,0.076505
+88 - OS Command Injection,66,169,0.112426,0.287879,0.161702,0.151643
+126 - Path Traversal,185,479,0.373695,0.967568,0.539157,0.523263
+66 - SQL Injection,2206,1616,0.961634,0.704442,0.813187,0.756434
+16 - Dictionary-based Password Attack,16,25,0.64,1.0,0.780488,0.779952
+310 - Scanning for Vulnerable Software,24,25,0.96,1.0,0.979592,0.979529
+153 - Input Data Manipulation,20,252,0.015873,0.2,0.029412,0.024898
+274 - HTTP Verb Tampering,48,74,0.648649,1.0,0.786885,0.785324
+194 - Fake the Source of Data,495,617,0.722853,0.90101,0.802158,0.787584
+34 - HTTP Response Splitting,174,195,0.892308,1.0,0.943089,0.941751
+33 - HTTP Request Smuggling,9,6,0.0,0.0,0.0,-0.0009

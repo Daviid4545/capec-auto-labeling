@@ -1,0 +1,76 @@
+RESUMEN DE ETIQUETADO POR REGLAS Y HEURISTICAS
+============================================================
+
+Archivo de entrada: sampling_srbh2020\eval_set.csv
+Filas procesadas: 8006
+Estrategia: agresiva moderada, orientada a priorizar recall sin reglas excesivamente generales.
+Formato: predicciones multietiqueta independientes por CAPEC.
+Normal se predice solo si no se activa ninguna regla de ataque.
+
+--- Distribucion de etiquetas predichas ---
+  - 000 - Normal: 4848
+  - 66 - SQL Injection: 1616
+  - 194 - Fake the Source of Data: 617
+  - 126 - Path Traversal: 479
+  - 153 - Input Data Manipulation: 252
+  - 34 - HTTP Response Splitting: 195
+  - 88 - OS Command Injection: 169
+  - 274 - HTTP Verb Tampering: 74
+  - 242 - Code Injection: 31
+  - 16 - Dictionary-based Password Attack: 25
+  - 310 - Scanning for Vulnerable Software: 25
+  - 33 - HTTP Request Smuggling: 6
+  - 272 - Protocol Manipulation: 5
+
+--- Activacion por regla ---
+  - SQLI_01 (66 - SQL Injection): 823
+  - SQLI_02 (66 - SQL Injection): 23
+  - SQLI_03 (66 - SQL Injection): 382
+  - SQLI_04 (66 - SQL Injection): 114
+  - SQLI_05 (66 - SQL Injection): 901
+  - SQLI_06 (66 - SQL Injection): 385
+  - PT_01 (126 - Path Traversal): 151
+  - PT_02 (126 - Path Traversal): 362
+  - PT_03 (126 - Path Traversal): 11
+  - PT_04 (126 - Path Traversal): 141
+  - CODE_01 (242 - Code Injection): 28
+  - CODE_02 (242 - Code Injection): 3
+  - CODE_03 (242 - Code Injection): 0
+  - OSCI_01 (88 - OS Command Injection): 163
+  - OSCI_02 (88 - OS Command Injection): 0
+  - OSCI_03 (88 - OS Command Injection): 13
+  - DICT_01 (16 - Dictionary-based Password Attack): 25
+  - DICT_02 (16 - Dictionary-based Password Attack): 16
+  - DICT_03 (16 - Dictionary-based Password Attack): 25
+  - SCAN_01 (310 - Scanning for Vulnerable Software): 25
+  - SCAN_02 (310 - Scanning for Vulnerable Software): 1
+  - IDM_01 (153 - Input Data Manipulation): 2
+  - IDM_02 (153 - Input Data Manipulation): 66
+  - IDM_03 (153 - Input Data Manipulation): 224
+  - VERB_01 (274 - HTTP Verb Tampering): 68
+  - VERB_02 (274 - HTTP Verb Tampering): 74
+  - FAKE_01 (194 - Fake the Source of Data): 617
+  - FAKE_02 (194 - Fake the Source of Data): 0
+  - FAKE_03 (194 - Fake the Source of Data): 0
+  - HRS_01 (34 - HTTP Response Splitting): 178
+  - HRS_02 (34 - HTTP Response Splitting): 149
+  - HSMUG_01 (33 - HTTP Request Smuggling): 6
+  - HSMUG_02 (33 - HTTP Request Smuggling): 0
+  - PROTO_01 (272 - Protocol Manipulation): 5
+  - PROTO_02 (272 - Protocol Manipulation): 0
+  - PROTO_03 (272 - Protocol Manipulation): 0
+
+--- Metricas rapidas sobre eval_set ---
+  - rows: 8006
+  - micro_f1: 0.795594
+  - macro_f1: 0.524791
+  - micro_precision: 0.783625
+  - micro_recall: 0.807935
+  - macro_precision: 0.522425
+  - macro_recall: 0.616468
+  - hamming_loss: 0.032274
+  - jaccard_samples: 0.803460
+  - subset_accuracy: 0.794029
+
+--- Nota metodologica ---
+Esta tecnica se usa como baseline interpretable. Las reglas son explicitas y trazables. Se adopta una estrategia agresiva moderada: no se busca maximizar un clasificador final, sino disponer de un punto de comparacion reproducible frente a las demas tecnicas. La evaluacion final se hara de forma comun junto con el resto de tecnicas mediante 07_evaluation.py.
