@@ -1,0 +1,73 @@
+label,lf_name,positive_votes,negative_votes,abstentions
+272 - Protocol Manipulation,rules_positive,5,0,8001
+272 - Protocol Manipulation,rules_normal_negative,0,4848,3158
+272 - Protocol Manipulation,embeddings_positive,91,0,7915
+272 - Protocol Manipulation,embeddings_normal_negative,0,5609,2397
+272 - Protocol Manipulation,embedding_score_high,7,0,7999
+272 - Protocol Manipulation,embedding_score_low,0,1044,6962
+242 - Code Injection,rules_positive,31,0,7975
+242 - Code Injection,rules_normal_negative,0,4848,3158
+242 - Code Injection,embeddings_positive,153,0,7853
+242 - Code Injection,embeddings_normal_negative,0,5609,2397
+242 - Code Injection,embedding_score_high,110,0,7896
+242 - Code Injection,embedding_score_low,0,3488,4518
+88 - OS Command Injection,rules_positive,169,0,7837
+88 - OS Command Injection,rules_normal_negative,0,4848,3158
+88 - OS Command Injection,embeddings_positive,143,0,7863
+88 - OS Command Injection,embeddings_normal_negative,0,5609,2397
+88 - OS Command Injection,embedding_score_high,72,0,7934
+88 - OS Command Injection,embedding_score_low,0,3785,4221
+126 - Path Traversal,rules_positive,479,0,7527
+126 - Path Traversal,rules_normal_negative,0,4848,3158
+126 - Path Traversal,embeddings_positive,212,0,7794
+126 - Path Traversal,embeddings_normal_negative,0,5609,2397
+126 - Path Traversal,embedding_score_high,321,0,7685
+126 - Path Traversal,embedding_score_low,0,5663,2343
+66 - SQL Injection,rules_positive,1616,0,6390
+66 - SQL Injection,rules_normal_negative,0,4848,3158
+66 - SQL Injection,embeddings_positive,895,0,7111
+66 - SQL Injection,embeddings_normal_negative,0,5609,2397
+66 - SQL Injection,embedding_score_high,1080,0,6926
+66 - SQL Injection,embedding_score_low,0,6538,1468
+16 - Dictionary-based Password Attack,rules_positive,25,0,7981
+16 - Dictionary-based Password Attack,rules_normal_negative,0,4848,3158
+16 - Dictionary-based Password Attack,embeddings_positive,55,0,7951
+16 - Dictionary-based Password Attack,embeddings_normal_negative,0,5609,2397
+16 - Dictionary-based Password Attack,embedding_score_high,35,0,7971
+16 - Dictionary-based Password Attack,embedding_score_low,0,7327,679
+310 - Scanning for Vulnerable Software,rules_positive,25,0,7981
+310 - Scanning for Vulnerable Software,rules_normal_negative,0,4848,3158
+310 - Scanning for Vulnerable Software,embeddings_positive,109,0,7897
+310 - Scanning for Vulnerable Software,embeddings_normal_negative,0,5609,2397
+310 - Scanning for Vulnerable Software,embedding_score_high,80,0,7926
+310 - Scanning for Vulnerable Software,embedding_score_low,0,4774,3232
+153 - Input Data Manipulation,rules_positive,252,0,7754
+153 - Input Data Manipulation,rules_normal_negative,0,4848,3158
+153 - Input Data Manipulation,embeddings_positive,1,0,8005
+153 - Input Data Manipulation,embeddings_normal_negative,0,5609,2397
+153 - Input Data Manipulation,embedding_score_high,0,0,8006
+153 - Input Data Manipulation,embedding_score_low,0,5860,2146
+274 - HTTP Verb Tampering,rules_positive,74,0,7932
+274 - HTTP Verb Tampering,rules_normal_negative,0,4848,3158
+274 - HTTP Verb Tampering,embeddings_positive,169,0,7837
+274 - HTTP Verb Tampering,embeddings_normal_negative,0,5609,2397
+274 - HTTP Verb Tampering,embedding_score_high,53,0,7953
+274 - HTTP Verb Tampering,embedding_score_low,0,600,7406
+194 - Fake the Source of Data,rules_positive,617,0,7389
+194 - Fake the Source of Data,rules_normal_negative,0,4848,3158
+194 - Fake the Source of Data,embeddings_positive,264,0,7742
+194 - Fake the Source of Data,embeddings_normal_negative,0,5609,2397
+194 - Fake the Source of Data,embedding_score_high,73,0,7933
+194 - Fake the Source of Data,embedding_score_low,0,455,7551
+34 - HTTP Response Splitting,rules_positive,195,0,7811
+34 - HTTP Response Splitting,rules_normal_negative,0,4848,3158
+34 - HTTP Response Splitting,embeddings_positive,297,0,7709
+34 - HTTP Response Splitting,embeddings_normal_negative,0,5609,2397
+34 - HTTP Response Splitting,embedding_score_high,60,0,7946
+34 - HTTP Response Splitting,embedding_score_low,0,2654,5352
+33 - HTTP Request Smuggling,rules_positive,6,0,8000
+33 - HTTP Request Smuggling,rules_normal_negative,0,4848,3158
+33 - HTTP Request Smuggling,embeddings_positive,8,0,7998
+33 - HTTP Request Smuggling,embeddings_normal_negative,0,5609,2397
+33 - HTTP Request Smuggling,embedding_score_high,2,0,8004
+33 - HTTP Request Smuggling,embedding_score_low,0,1622,6384

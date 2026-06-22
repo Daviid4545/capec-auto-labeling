@@ -1,0 +1,63 @@
+RESUMEN DE SUPERVISION DEBIL / DISTANTE
+============================================================
+
+Archivo de evaluacion: sampling_srbh2020/eval_set.csv
+Archivo de reglas: rules_labeling_srbh2020/predictions_rules.csv
+Archivo de embeddings: embeddings_labeling_srbh2020/predictions_embeddings.csv
+Archivo de scores: embeddings_labeling_srbh2020/embeddings_scores.csv
+Archivo de umbrales: embeddings_labeling_srbh2020/embeddings_thresholds.csv
+Metodo solicitado: weighted_vote
+Filas evaluadas: 8006
+MAX_ATTACK_LABELS: 2
+
+--- Metodo usado por etiqueta ---
+  - 272 - Protocol Manipulation: weighted_vote
+  - 242 - Code Injection: weighted_vote
+  - 88 - OS Command Injection: weighted_vote
+  - 126 - Path Traversal: weighted_vote
+  - 66 - SQL Injection: weighted_vote
+  - 16 - Dictionary-based Password Attack: weighted_vote
+  - 310 - Scanning for Vulnerable Software: weighted_vote
+  - 153 - Input Data Manipulation: weighted_vote
+  - 274 - HTTP Verb Tampering: weighted_vote
+  - 194 - Fake the Source of Data: weighted_vote
+  - 34 - HTTP Response Splitting: weighted_vote
+  - 33 - HTTP Request Smuggling: weighted_vote
+
+--- Fuentes debiles utilizadas ---
+  - rules_positive: peso 0.7
+  - rules_normal_negative: peso -0.35
+  - embeddings_positive: peso 0.45
+  - embeddings_normal_negative: peso -0.25
+  - embedding_score_high: peso 0.3
+  - embedding_score_low: peso -0.2
+
+--- Distribucion de etiquetas predichas ---
+  - 000 - Normal: 6312
+  - 272 - Protocol Manipulation: 0
+  - 242 - Code Injection: 58
+  - 88 - OS Command Injection: 91
+  - 126 - Path Traversal: 245
+  - 66 - SQL Injection: 1097
+  - 16 - Dictionary-based Password Attack: 29
+  - 310 - Scanning for Vulnerable Software: 34
+  - 153 - Input Data Manipulation: 25
+  - 274 - HTTP Verb Tampering: 81
+  - 194 - Fake the Source of Data: 228
+  - 34 - HTTP Response Splitting: 95
+  - 33 - HTTP Request Smuggling: 0
+
+--- Metricas rapidas sobre eval_set ---
+  - rows: 8006
+  - micro_f1: 0.712193
+  - macro_f1: 0.322239
+  - micro_precision: 0.703436
+  - micro_recall: 0.721172
+  - macro_precision: 0.355021
+  - macro_recall: 0.341157
+  - hamming_loss: 0.045312
+  - jaccard_samples: 0.714443
+  - subset_accuracy: 0.701599
+
+--- Nota metodologica ---
+La supervision debil combina fuentes imperfectas de etiquetado, principalmente reglas, predicciones de embeddings y puntuaciones de similitud. Las etiquetas originales del dataset no se usan para generar las predicciones, solo para calcular metricas rapidas de comprobacion. Esta tecnica actua como agregador reproducible de senales debiles y no como clasificador final entrenado.
